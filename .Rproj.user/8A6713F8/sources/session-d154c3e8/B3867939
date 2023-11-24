@@ -3,7 +3,7 @@
     "path": "~/GitHub/stphtoolbox/inst/quarto/ent_odk_analysis.qmd",
     "project_path": "inst/quarto/ent_odk_analysis.qmd",
     "type": "quarto_markdown",
-    "hash": "4230739717",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1700837357938.0,
@@ -17,7 +17,7 @@
         "docOutlineVisible": "1",
         "cursorPosition": "32,0",
         "scrollLine": "0",
-        "rmdVisualModeLocation": "488:681.4815063476562",
+        "rmdVisualModeLocation": "488:0",
         "rmdVisualCollapsedChunks": ""
     },
     "folds": "",
