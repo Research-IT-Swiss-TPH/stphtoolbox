@@ -36,3 +36,17 @@ An index of available documentation for the `stphtoolbox` is displayed using the
 ```{r}
 help(package="stphtoolbox")
 ```
+
+## Usage Example
+
+Generate a Word report using the `generate_word_report` function:
+
+```{r}
+# Load the stphtoolbox package
+library(stphtoolbox)
+# Generate a Word report
+stphtoolbox::generate_word_report(qmd_filename  = "my_content_input.qmd",
+                                  docx_filename = "my_word_report")
+```
+
+This will create a Word document by processing the content of your specified Quarto document "my_content_input.qmd" and save the resulting Word report as "my_word_report.docx" in your current working directory.

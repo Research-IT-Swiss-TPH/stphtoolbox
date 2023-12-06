@@ -5,21 +5,24 @@
 \title{Generate a Microsoft Word report using Quarto}
 \usage{
 generate_word_report(
-  report_dir,
-  quarto_filename,
-  report_filename,
+  qmd_filename,
+  docx_filename,
+  filename_format = "",
   params = list()
 )
 }
 \arguments{
-\item{report_dir}{Path to the folder where the generated DOCX Quarto report is stored}
+\item{qmd_filename}{Filename of the Quarto document to be processed (with *.qmd extension).}
 
-\item{quarto_filename}{Filename of the Quarto document to run}
+\item{docx_filename}{Filename for the generated Quarto-rendered report (without *.docx extension).}
 
-\item{report_filename}{Filename of the Quarto rendered report}
+\item{filename_format}{Specify the filename format, options include an empty string (default) or "with_date".}
 
-\item{params}{List of parameters}
+\item{params}{List of parameters to customize the report generation process (optional, default is an empty list).}
+}
+\value{
+The function does not explicitly return a value but generates a Quarto report in the working directory.
 }
 \description{
-This function generates a standardised Quarto document in a DOCX format
+This function generates a standardized Quarto document in DOCX format.
 }
