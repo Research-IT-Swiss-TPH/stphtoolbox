@@ -20,7 +20,7 @@ To install the `stphtoolbox` package on your workstation, you have two options:
 
 Download the master branch as a ZIP file and build the package locally.
 
-### Install the latest released version (preferred option):
+### Install the latest released version (preferred option)
 
 Install the package directly from the GitHub repository using the following code:
 
@@ -50,3 +50,7 @@ stphtoolbox::generate_word_report(qmd_filename  = "my_content_input.qmd",
 ```
 
 This will create a Word document by processing the content of your specified Quarto document "my_content_input.qmd" and save the resulting Word report as "my_word_report.docx" in your current working directory.
+
+## Package improvements
+
+To suggest changes, please open an issue.
