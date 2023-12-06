@@ -1,6 +1,6 @@
 # stphtoolbox
 
-The Swiss TPH Toolbox is an R package designed to facilitate reproducible research by providing document templates and graphic representations.
+The Swiss TPH Toolbox (`stphtoolbox`) is an R package designed to facilitate reproducible research by providing custom document templates and graphic representations.
 
 ## Features
 
