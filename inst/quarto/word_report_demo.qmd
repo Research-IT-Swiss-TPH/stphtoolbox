@@ -68,3 +68,20 @@ iris %>%
   head(10) %>% 
   knitr::kable()
 ```
+
+```{r}
+iris %>% 
+ggplot2::ggplot() +
+  ggplot2::geom_boxplot(mapping = ggplot2::aes(y = Sepal.Length,
+                                               fill = stph_colors[[1]])) +
+  ggplot2::theme_bw()
+```
+
+```{r}
+iris %>% 
+ggplot2::ggplot() +
+  ggplot2::geom_bar(mapping = ggplot2::aes(x = Species,
+                                           fill = Species)) +
+  ggplot2::scale_fill_manual(values = unlist(stph_colors)) +
+  ggplot2::theme_bw()
+```
