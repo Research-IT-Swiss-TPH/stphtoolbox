@@ -91,6 +91,7 @@ generate_word_report <- function(qmd_filename,
 
   # Render the Quarto document to generate the Word report
   quarto::quarto_render(input          = qmd_file,
+                        output_format  = "docx",
                         output_file    = docx_filename,
                         execute_params = params,
                         metadata_file  = metadata_yml,
