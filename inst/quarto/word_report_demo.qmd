@@ -1,6 +1,11 @@
 ---
 title: "Swiss TPH report example"
 subtitle: "Sub-Title of Document Name of Project/Mandate, etc…"
+author:
+  - name: Jane Doe
+    orcid: 0000-0000-0000-0000
+  - name: John Doe
+    orcid: 0000-0000-0000-0000
 date: today
 editor: visual
 execute:
@@ -53,4 +58,13 @@ The European languages are members of the same family. Their separate existence 
 # Load Swiss TPH graphical chart colors
 stph_colors <- stphtoolbox::stph_palette()
 scales::show_col(stph_colors)
+```
+
+# Table design
+
+```{r}
+library(dplyr)
+iris %>%
+  head(10) %>% 
+  knitr::kable()
 ```

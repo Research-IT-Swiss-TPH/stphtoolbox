@@ -6,3 +6,6 @@ format:
     number-sections: true
 filters:
   - docx-landscape.lua
+execute:
+  echo: false
+  warning: false
