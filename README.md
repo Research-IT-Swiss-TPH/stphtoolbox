@@ -1,11 +1,11 @@
 # stphtoolbox
 
-The Swiss TPH Toolbox (`stphtoolbox`) is an R package designed to facilitate reproducible research by providing custom document templates and graphic representations.
+The Swiss TPH Toolbox (`stphtoolbox`) is an R package designed to facilitate [reproducible research](https://the-turing-way.netlify.app/reproducible-research/reproducible-research) by providing custom document templates and graphic representations.
 
 ## Features
 
-* **Document templates**: streamline your research workflows with custom Swiss TPH templates (Word, Powerpoint).
-* **Graphic representation**: leverage the capabilities of `ggplot2` and create visually appealing graphics in accordance with the Swiss TPH branding guidelines.
+* :page_facing_up: **Document templates**: streamline your research workflows with custom Swiss TPH templates (Word, Powerpoint).
+* :bar_chart: **Graphic representation**: leverage the capabilities of `ggplot2` and create visually appealing graphics in accordance with the Swiss TPH branding guidelines.
 
 ## About
 
@@ -51,6 +51,12 @@ stphtoolbox::generate_word_report(qmd_filename  = "my_content_input.qmd",
 
 This will create a Word document by processing the content of your specified Quarto document "my_content_input.qmd" and save the resulting Word report as "my_word_report.docx" in your current working directory.
 
-## Package improvements
+## Package development
 
-To suggest changes, please open an issue.
+### Bug reports and suggestions
+
+If you encounter bugs or have suggestions for improvements, please open an issue. Your feedback is valuable and helps improving the package.
+
+### Contributing
+
+Pull requests are welcome on the `development` branch. For major changes, please open an issue first to discuss what you would like to change.
