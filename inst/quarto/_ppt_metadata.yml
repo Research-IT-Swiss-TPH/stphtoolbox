@@ -1,0 +1,6 @@
+format:
+  pptx:
+    reference-doc: ppt_template1.pptx
+execute:
+  echo: false
+  warning: false
