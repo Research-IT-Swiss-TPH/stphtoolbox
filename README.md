@@ -5,7 +5,7 @@ The Swiss TPH Toolbox (`stphtoolbox`) is an R package designed to facilitate rep
 ## Features
 
 * **Document templates**: streamline your research workflows with custom Swiss TPH templates (Word, Powerpoint).
-* **Graphic representation**: create visually appealing graphics using the power of `ggplot2`.
+* **Graphic representation**: create visually appealing graphics following the Swiss TPH graph chart using the power of `ggplot2`.
 
 ## About
 

@@ -36,16 +36,7 @@ scales::show_col(stph_colors)
 The iris dataset was used for this demo.
 
 ```{r}
-library(dplyr)
-library(ggplot2)
 iris %>% 
-  ggplot2::ggplot() +
-  ggplot2::geom_boxplot(mapping = ggplot2::aes(y    = Sepal.Length,
-                                               fill = Species)) +
-  ggplot2::scale_fill_manual(values = unlist(stph_colors)) +
-  ggplot2::theme_bw() +
-  ggplot2::theme(panel.grid.major.x = element_blank(),
-                 panel.grid.minor.x = element_blank(),
-                 axis.text.x        = element_blank(),
-                 axis.ticks.x       = element_blank())
+  stphtoolbox::vertical_boxplot("Sepal.Length",
+                                "Species")
 ```
