@@ -11,21 +11,26 @@
 
 stph_palette <- function() {
 
-  red1    <- "#be3427"
-  red2    <- "#e27b73"
-  blue1   <- "#478bb7"
-  blue2   <- "#b4d1e1"
+  red1    <- "#bf3227"
+  red2    <- "#eca7a1"
+  blue1   <- "#468ab2"
+  blue2   <- "#b3d0e1"
   green1  <- "#b5c751"
+  green2  <- "#e1e8b9"
   yellow1 <- "#edcd64"
-  grey1   <- "#717073"
-  grey2   <- "#babcbe"
+  yellow2 <- "#f7ebc1"
+  grey1   <- "#868686"
+  grey2   <- "#cecece"
 
   stph_colors <- c(red1,
                    blue1,
                    green1,
                    yellow1,
                    grey1,
+                   red2,
                    blue2,
+                   green2,
+                   yellow2,
                    grey2)
 
 }
