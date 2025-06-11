@@ -1,0 +1,73 @@
+---
+title: "letter_demo"
+format:
+  letter-pdf:
+    pdf-engine: xelatex
+date: last-modified
+mainfont: Arial
+fontsize: 11pt
+lang: en
+execute: 
+  echo: false
+  warning: false
+params:
+  prefix: Mr.
+  first_name: James
+  last_name: Smith
+  organisation: University of Basel
+  address: Petersplatz 1, P. O. Box
+  zip: 4001
+  city: Basel
+sender:
+  first_name: Anna
+  last_name: Muster
+  email: anna.muster@swisstph.ch
+  phone: +41 79 xxx xx xx
+---
+
+```{r}
+
+```
+
+\placetextbox{2cm}{2cm}{r}{
+\textbf{\nothing{}{{< meta sender.first_name >}} {{< meta sender.last_name >}}}\\
+{{< meta sender.email >}}\\
+Mobile {{< meta sender.phone >}}
+}
+
+
+`r params$prefix` `r params$first_name` `r params$last_name`
+
+`r params$organisation`
+
+`r params$address`
+
+`r params$zip` `r params$city`
+
+`r params$city`, `{r} format(Sys.Date(), "%d.%m.%Y")`
+
+\vspace{2cm}
+
+\begin{large}
+\textcolor{swisstphblue}{\textbf{Subject}}
+\end{large}
+
+Dear `r params$prefix` `r params$last_name`,
+
+```{r}
+set.seed(123)
+lorem::ipsum(1, avg_words_per_sentence = 15)
+lorem::ipsum(1)
+```
+
+Kind regards,
+
+![](./images/signature.png){fig-align="left" width="15%"}
+
+{{< meta sender.first_name >}} {{< meta sender.last_name >}}
+
+*job title*
+
+*Unit*
+
+*Department*
