@@ -26,7 +26,8 @@ sender:
 ---
 
 ```{r}
-
+# Put a R chunk here even if you don't need it
+# to make sure the rendering works well
 ```
 
 \placetextbox{2cm}{2cm}{r}{
