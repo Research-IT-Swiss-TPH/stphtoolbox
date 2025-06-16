@@ -20,15 +20,35 @@
 
 % Define font sizes for headers
 \titleformat{\section}
-  {\normalfont\fontsize{11}{16.8}\bfseries\color{swisstphblue}}
+  {\normalfont\fontsize{18}{16.8}\bfseries\color{swisstphblue}}
   {\thesection.}
   {1em}
   {}
 
+\titleformat{\subsection}
+  {\normalfont\fontsize{13}{16.8}\bfseries\color{swisstphblue}}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{16.8}\bfseries\color{swisstphblue}}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+\titleformat{\paragraph}
+  {\normalfont\fontsize{11}{16.8}\bfseries\color{swisstphred}}
+  {}
+  {0em}
+  {}
+
 %% Set page size
-\geometry{a4paper, total={170mm,257mm}, left=20mm, top=52.5mm, bottom=15mm, right=20mm}
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm, bottom=20mm, right=20mm}
 
 
+%% A useful function that can flexibly put text box
+%% Source: https://tex.stackexchange.com/questions/24663/how-to-place-a-floating-text-box-at-a-specified-location-in-page-coordinates
 \newcommand{\placetextbox}[4]{% \placetextbox{<offset top>}{<offset left/right>}{<align>}{<stuff>}
   \setbox0=\hbox{#4}% Put <stuff> in a box
   \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
