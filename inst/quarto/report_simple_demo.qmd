@@ -1,5 +1,12 @@
 ---
-title: "report_simple_demo"
+title: "TITLE OF DOCUMENT"
+additional1: "ADDITIONAL LINE"
+additional2: "ADDITIONAL LINE"
+subtitle: "Subtitle of Document"
+projectname: "Name of Project/Mandate, etc..."
+author: "Name of Author"
+email: "E-mail of author (optional)"
+telephone: "Telephone of author (optional)"
 format:
   report-pdf:
     pdf-engine: xelatex

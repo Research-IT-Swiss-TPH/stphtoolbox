@@ -15,8 +15,8 @@ contributes:
     typst:
       mainfont: "Microsoft Sans Serif"
       margin:
-        top: 52.5mm
-        bottom: 15mm
+        top: 20mm
+        bottom: 20mm
         right: 20mm
         left: 20mm
       template-partials:
