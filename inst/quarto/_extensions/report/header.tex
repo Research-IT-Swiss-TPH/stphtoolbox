@@ -1,0 +1,65 @@
+% load packages
+\usepackage{geometry}
+\usepackage[pscoord]{eso-pic}
+\usepackage{paracol}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage[most]{tcolorbox}
+
+% Just a command doing nothing
+% It's to separate different levels of brackets
+\newcommand{\nothing}[1]{}
+
+% Define Swiss TPH colors
+\definecolor{swisstphred}{HTML}{BF3227}
+\definecolor{swisstphblue}{HTML}{468AB2}
+\definecolor{pureblack}{HTML}{222222}
+\definecolor{goldensand}{HTML}{EDCD64}
+\definecolor{limegreen}{HTML}{B5C752}
+
+% Define font sizes for headers
+\titleformat{\section}
+  {\normalfont\fontsize{18}{16.8}\bfseries\color{swisstphblue}}
+  {\thesection.}
+  {1em}
+  {}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{13}{16.8}\bfseries\color{swisstphblue}}
+  {\thesubsection}
+  {1em}
+  {}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{16.8}\bfseries\color{swisstphblue}}
+  {\thesubsubsection}
+  {1em}
+  {}
+
+\titleformat{\paragraph}
+  {\normalfont\fontsize{11}{16.8}\bfseries\color{swisstphred}}
+  {}
+  {0em}
+  {}
+
+
+%% Set page size
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm, bottom=20mm, right=20mm}
+
+
+%% A useful function that can flexibly put text box
+%% Source: https://tex.stackexchange.com/questions/24663/how-to-place-a-floating-text-box-at-a-specified-location-in-page-coordinates
+\newcommand{\placetextbox}[4]{% \placetextbox{<offset top>}{<offset left/right>}{<align>}{<stuff>}
+  \setbox0=\hbox{#4}% Put <stuff> in a box
+  \AddToShipoutPictureFG*{% Add <stuff> to current page foreground
+    \if#3r
+    \put(\LenToUnit{\paperwidth-#1},\LenToUnit{\paperheight-#2}){\vtop{{\null}\makebox[0pt][r]{\begin{tabular}{r}#4\end{tabular}}}}%
+    \else
+    \put(\LenToUnit{#1},\LenToUnit{\paperheight-#2}){\vtop{{\null}\makebox[0pt][l]{\begin{tabular}{l}#4\end{tabular}}}}%
+    \fi
+  }%
+}%
+
+
+
