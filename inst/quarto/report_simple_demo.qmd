@@ -20,6 +20,7 @@ execute:
 toc: true
 toc-depth: 3
 toc-title: \textcolor{swisstphblue}{TABLE OF CONTENTS}
+bibliography: references.bib
 ---
 
 ```{r}
@@ -122,6 +123,13 @@ ggplot(mtcars, aes(x = mpg, fill = factor(cyl))) +
 
 @fig-ggplot2 is an example of using R code to generate a figure in Quarto documents.
 
+## Example Citations
+
+This example is from @akpodiete_improvement_2025.
+
+Mosquitoes of the *Anopheles gambiae* s.l. complex are the primary vectors of human malaria in sub-Saharan Africa. The freshwater species *Anopheles coluzzii* is one of this complex’s most abundant and widespread vectors. It is found from Senegal to Angola, spanning West Africa, West-Central Africa, and North-West Southern Africa (@della_torre_distribution_2005, @gimonneau_behavioral_2010)
+
+For more advanced use of Quarto citations, see [Citations - Quarto](https://quarto.org/docs/authoring/citations.html).
 
 # TIPS AND TRICKS
 
@@ -145,3 +153,12 @@ See [Callout Blocks](https://quarto.org/docs/authoring/callouts.html) for more d
 Or you can create more flexible callout blocks with LaTeX. Just like this one with Swiss TPH lime green.
 
 \end{tcolorbox}
+
+\vspace{2cm}
+
+\begin{large}
+\textcolor{swisstphblue}{\textbf{References}}
+\end{large}
+
+::: {#refs}
+:::
