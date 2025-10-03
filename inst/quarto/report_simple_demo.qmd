@@ -1,12 +1,20 @@
 ---
-title: "TITLE OF DOCUMENT TITLE OF DOCUMENT TITLE OF DOCUMENT TITLE OF DOCUMENT TITLE OF DOCUMENT"
+title: "TITLE OF DOCUMENT"
 additional1: "ADDITIONAL LINE"
 additional2: "ADDITIONAL LINE"
-subtitle: "Subtitle of Document Subtitle of Document Subtitle of Document Subtitle of Document"
+subtitle: "Subtitle of Document"
 projectname: "Name of Project/Mandate, etc..."
 author:
   - name: Jane Doe
-    email: jane.doe@gmail.com
+    url: https://www.swisstph.ch/en/
+    email: jane.doe@swisstph.ch
+    phone: 123456789
+    orcid: https://orcid.org/
+  - name: Sam Smith
+    url: https://www.swisstph.ch/en/
+    email: sam.smith@swisstph.ch
+    phone: 88888888
+    orcid: https://orcid.org/
 format:
   report-pdf:
     pdf-engine: xelatex

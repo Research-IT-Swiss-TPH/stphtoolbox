@@ -47,8 +47,10 @@ $date$
 
 $for(by-author)$
   \hspace*{2cm}{\large \textbf{$if(by-author.name)$$by-author.name.literal$$endif$}}\\
+  \hspace*{2cm}{\small $if(by-author.url)$\url{$by-author.url$}$endif$}\\
   \hspace*{2cm}{\small $if(by-author.email)$\url{$by-author.email$}$endif$}\\
   \hspace*{2cm}{\small $if(by-author.phone)$$by-author.phone$$endif$}\\
+  \hspace*{2cm}{\small $if(by-author.orcid)$\url{$by-author.orcid$}$endif$}\\
 $endfor$
 
 \hspace*{2cm}
