@@ -4,7 +4,7 @@
      % logo
     \AtPageLowerLeft{
       \put(\LenToUnit{\dimexpr\paperwidth-1.13\paperwidth}, \LenToUnit{0.65\paperheight}){
-        \includegraphics[width=0.42\paperwidth]{_extensions/report/images/TPHicon.jpeg}
+        \includegraphics[width=0.42\paperwidth]{_extensions/report/TPHicon.jpeg}
       }%
     }%
 }
@@ -21,26 +21,36 @@ $date$
 
 \vspace{1cm}
 
-\hspace*{2cm}
-{\Huge \textbf{\textcolor{swisstphblue}{$additional1$}} \par} % Additional line 1
+\begingroup
+      \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
+      \noindent{\Huge \textbf{\textcolor{swisstphblue}{$additional1$}} \par} % Additional line 1
+\endgroup
 
-\hspace*{2cm}
-{\Huge \textbf{\textcolor{swisstphblue}{$additional2$}} \par} % Additional line 2
+\begingroup
+      \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
+      \noindent{\Huge \textbf{\textcolor{swisstphblue}{$additional2$}} \par} % Additional line 2
+\endgroup
 
 \vspace{0.5cm}
 
-\hspace*{2cm}
-{\huge {\textcolor{swisstphred}{$subtitle$}} \par} % Subtitle of document
+\begingroup
+      \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
+      \noindent{\huge {\textcolor{swisstphred}{$subtitle$}} \par} % Subtitle of document
+\endgroup
 
-\hspace*{2cm}
-{\huge {\textcolor{swisstphred}{$projectname$}} \par} % Name of project
+\begingroup
+      \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
+      \noindent{\huge {\textcolor{swisstphred}{$projectname$}} \par} % Name of project
+\endgroup
 
 \vspace{0.5cm}
 
 $for(by-author)$
   \hspace*{2cm}{\large \textbf{$if(by-author.name)$$by-author.name.literal$$endif$}}\\
+  \hspace*{2cm}{\small $if(by-author.url)$\url{$by-author.url$}$endif$}\\
   \hspace*{2cm}{\small $if(by-author.email)$\url{$by-author.email$}$endif$}\\
   \hspace*{2cm}{\small $if(by-author.phone)$$by-author.phone$$endif$}\\
+  \hspace*{2cm}{\small $if(by-author.orcid)$\url{$by-author.orcid$}$endif$}\\
 $endfor$
 
 \hspace*{2cm}
@@ -50,7 +60,7 @@ $endfor$
      % logo
     \AtPageLowerLeft{
       \put(\LenToUnit{\dimexpr\paperwidth-0.3\paperwidth}, \LenToUnit{0.05\paperheight}){
-        \includegraphics[width=0.2\paperwidth]{_extensions/report/images/TPHlogo4.png}
+        \includegraphics[width=0.2\paperwidth]{_extensions/report/TPHlogo4.png}
       }%
     }%
 }
