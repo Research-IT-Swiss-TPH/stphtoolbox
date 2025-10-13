@@ -1,0 +1,64 @@
+/*-- scss:defaults --*/
+
+$body-bg: #fff;
+$body-color: #000;
+$link-color: #468ab2;
+
+// headings
+$presentation-h2-font-size: 24px !default;
+$presentation-h3-font-size: 18px !default;
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+.reveal h1 {
+  text-align: right;
+  color: #ffffff;
+}
+
+.reveal h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 24px;          /* ensures 24 even if var not picked up */
+  color: #468ab2;
+  margin-bottom: 1.2em;
+}
+
+.reveal h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;          /* ensures 18 even if var not picked up */
+  color: #bf3227;
+}
+
+.reveal ul li::marker,
+.reveal ol li::marker {
+  color: #bf3227; /* bullet or number color */
+}
+
+.table-striped {
+  > tbody > tr:nth-of-type(odd) > * {
+    background-color: #f2f2f2;
+  }
+}
+
+.reveal strong {
+  color: #b5c751; /* your highlight color */
+  font-weight: bold;
+}
+
+.reveal .margin-note {
+  position: absolute;
+  top: 1em;
+  right: -6em;      /* relative to the full slide edge */
+  width: 20%;
+  font-size: 0.8em;
+  color: gray;
+  text-align: center;
+}
+
+.reveal:has(section.present[data-background-image]) .footer {
+  color: #fff !important;
+}
