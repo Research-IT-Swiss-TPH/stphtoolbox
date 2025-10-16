@@ -6,6 +6,7 @@
 \usepackage{tabularx}
 \usepackage{titlesec}
 \usepackage[most]{tcolorbox}
+\usepackage[paper=A4]{typearea}
 
 % Just a command doing nothing
 % It's to separate different levels of brackets
@@ -61,5 +62,13 @@
   }%
 }%
 
-
-
+% A useful function that can change the page number place for isolated pages
+% Source: https://tex.stackexchange.com/questions/278113/single-landscape-page-with-page-number-at-the-bottom
+\def\fillandplacepagenumber{%
+ \par\pagestyle{empty}%
+ \vbox to 0pt{\vss}\vfill
+ \vbox to 0pt{\baselineskip0pt
+   \hbox to\linewidth{\hss}%
+   \baselineskip\footskip
+   \hbox to\linewidth{%
+     \hfil\thepage\hfil}\vss}}

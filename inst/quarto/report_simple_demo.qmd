@@ -139,6 +139,18 @@ Mosquitoes of the *Anopheles gambiae* s.l. complex are the primary vectors of hu
 
 For more advanced use of Quarto citations, see [Citations - Quarto](https://quarto.org/docs/authoring/citations.html).
 
+::: {.landscape}
+
+This will appear in landscape.
+
+```{r}
+lorem::ipsum(5)
+```
+
+\fillandplacepagenumber
+
+:::
+
 # TIPS AND TRICKS
 
 ## Swiss TPH self-paced Quarto tutorial
