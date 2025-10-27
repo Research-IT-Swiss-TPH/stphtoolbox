@@ -168,7 +168,7 @@ Note that there are five types of callouts, including:
 
 See [Callout Blocks](https://quarto.org/docs/authoring/callouts.html) for more details.
 
-\begin{tcolorbox}[colback=white,colframe=limegreen]
+\begin{tcolorbox}[colback=white,colframe=limegreen,title=Swiss TPH Callout Box]
 
 Or you can create more flexible callout blocks with LaTeX. Just like this one with Swiss TPH lime green.
 
