@@ -1,7 +1,7 @@
 ---
 title: "TITLE OF DOCUMENT"
-additional1: "ADDITIONAL LINE"
-additional2: "ADDITIONAL LINE"
+additional1: "ADDITIONAL LINE 1"
+additional2: "ADDITIONAL LINE 2"
 subtitle: "Subtitle of Document"
 projectname: "Name of Project/Mandate, etc..."
 author:
