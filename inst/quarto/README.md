@@ -15,9 +15,9 @@ Our templates function as Quarto extensions. Extensions are a powerful way to mo
 
 Step 1: Download all necessary files into your working directory. They must be located in the same folder.
 
-- ppt_template1.pptx
-- ppt_report_demo.qmd
-- \_ppt\_metadata.yml
+- [ppt_template1.pptx](./ppt_template1.pptx)
+- [ppt_report_demo.qmd](./ppt_report_demo.qmd)
+- [\_ppt\_metadata.yml](./_ppt_metadata.yml)
 
 Step 2: Open `ppt_report_demo.qmd` in RStudio. We recommend creating an R project (`.Rproj`) in the same directory to ensure your working directory is correctly set.
 
@@ -29,10 +29,10 @@ Step 4: Render the `.qmd` file and save the output `.pptx` file.
 
 Step 1: Download all necessary files into your working directory. They must be located in the same folder.
 
-- report_template1.docx
-- word_report_demo.qmd
-- \_word\_metadata.yml
-- docx-landscape.lua
+- [report_template1.docx](./report_template1.docx)
+- [word_report_demo.qmd](./word_report_demo.qmd)
+- [\_word\_metadata.yml](./_word_metadata.yml)
+- [docx-landscape.lua](./docx-landscape.lua)
 
 Step 2: Open `word_report_demo.qmd` in RStudio. We recommend creating an R project (`.Rproj`) in the same directory to ensure your working directory is correctly set.
 
@@ -46,8 +46,8 @@ Step 1: Download the `_extensions/report/` folder into your working directory. *
 
 Step 2: Download the remaining required files into your working directory:
 
-- report_simple_demo.qmd
-- references.bib
+- [report_simple_demo.qmd](./report_simple_demo.qmd)
+- [references.bib](./references.bib)
 
 Step 3: Modify the `.qmd` file as needed. For general guidance on Quarto PDF rendering, please refer to: [PDF Basic - Quarto](https://quarto.org/docs/output-formats/pdf-basics.html).
 
@@ -57,11 +57,11 @@ Step 5: Render the `.qmd` file and save the output `.pdf` file.
 
 # Swiss TPH PDF letter template
 
-Step 1: Download the `_extensions/letter/` folder into your working directory. **IMPORTANT**: IMPORTANT: Do not change the directory structure. The path to this folder must remain `./_extensions/letter/` relative to your current working directory; otherwise, rendering will fail.
+Step 1: Download the `_extensions/letter/` folder into your working directory. **IMPORTANT**: Do not change the directory structure. The path to this folder must remain `./_extensions/letter/` relative to your current working directory; otherwise, rendering will fail.
 
 Step 2: Download the remaining required file into your working directory:
 
-- letter_demo.qmd
+- [letter_demo.qmd](./letter_demo.qmd)
 
 Step 3: Modify the `.qmd` file as needed. Be sure to update the file path of the example image to the correct location. For general guidance on Quarto PDF rendering, please refer to: [PDF Basic - Quarto](https://quarto.org/docs/output-formats/pdf-basics.html).
 
