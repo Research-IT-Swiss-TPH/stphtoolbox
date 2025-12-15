@@ -6,18 +6,12 @@ subtitle: "Subtitle of Document"
 projectname: "Name of Project/Mandate, etc..."
 author:
   - name: Jane Doe
-    url: https://www.swisstph.ch/en/
-    email: jane.doe@swisstph.ch
-    phone: 123456789
-    orcid: https://orcid.org/
+    affiliation: University of Basel
   - name: Sam Smith
-    url: https://www.swisstph.ch/en/
-    email: sam.smith@swisstph.ch
-    phone: 88888888
-    orcid: https://orcid.org/
-format:
-  report-pdf:
-    pdf-engine: xelatex
+    affiliation: Swiss TPH
+format: report-typst
+TPH-icon: TPHicon.jpeg
+TPH-logo: TPHlogo4.png
 date: last-modified
 mainfont: Arial
 fontsize: 11pt
@@ -27,7 +21,6 @@ execute:
   warning: false
 toc: true
 toc-depth: 3
-toc-title: \textcolor{swisstphblue}{TABLE OF CONTENTS}
 bibliography: references.bib
 ---
 
@@ -139,18 +132,6 @@ Mosquitoes of the *Anopheles gambiae* s.l. complex are the primary vectors of hu
 
 For more advanced use of Quarto citations, see [Citations - Quarto](https://quarto.org/docs/authoring/citations.html).
 
-::: {.landscape}
-
-This will appear in landscape.
-
-```{r}
-lorem::ipsum(5)
-```
-
-\fillandplacepagenumber
-
-:::
-
 # TIPS AND TRICKS
 
 ## Swiss TPH self-paced Quarto tutorial
@@ -165,20 +146,6 @@ You can create colourful callout blocks in Quarto very easily.
 Note that there are five types of callouts, including:
 `note`, `warning`, `important`, `tip`, and `caution`.
 :::
-
-See [Callout Blocks](https://quarto.org/docs/authoring/callouts.html) for more details.
-
-\begin{tcolorbox}[colback=white,colframe=limegreen,title=Swiss TPH Callout Box]
-
-Or you can create more flexible callout blocks with LaTeX. Just like this one with Swiss TPH lime green.
-
-\end{tcolorbox}
-
-\vspace{2cm}
-
-\begin{large}
-\textcolor{swisstphblue}{\textbf{References}}
-\end{large}
 
 ::: {#refs}
 :::
