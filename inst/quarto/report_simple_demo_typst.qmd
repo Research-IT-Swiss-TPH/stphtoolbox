@@ -7,11 +7,12 @@ projectname: "Name of Project/Mandate, etc..."
 author:
   - name: Jane Doe
     affiliation: University of Basel
+    email: jane.doe@unibas.ch
   - name: Sam Smith
     affiliation: Swiss TPH
+    email: sam.smith@swisstph.ch
 format: report-typst
-TPH-icon: TPHicon.jpeg
-TPH-logo: TPHlogo4.png
+numbering: 1
 date: last-modified
 mainfont: Arial
 fontsize: 11pt

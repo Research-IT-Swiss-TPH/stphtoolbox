@@ -35,8 +35,8 @@
   toc_depth: none,
   toc_indent: 1.5em,
   numbering: none,
-  TPH-icon: none,
-  TPH-logo: none,
+  TPH-icon: "_extensions/report/TPHicon.jpeg",
+  TPH-logo: "_extensions/report/TPHlogo4.png",
   mtop: none,
   mbottom: none,
   mleft: none,
@@ -130,6 +130,9 @@
       }
       if author.affiliation != none {
         align(left, text(author.affiliation))
+      }
+      if author.name != none{
+        align(left, text(fill: rgb(70, 138, 178), author.email))
       }
     }
   }
