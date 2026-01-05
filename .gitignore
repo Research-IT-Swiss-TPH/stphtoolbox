@@ -7,3 +7,5 @@ inst/quarto/report_simple_demo.pdf
 inst/quarto/report_simple_demo_typst.pdf
 inst/revealjs/template_test.html
 inst/quarto/README_files/
+
+/.luarc.json
