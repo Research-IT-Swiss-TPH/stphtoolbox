@@ -27,6 +27,8 @@ Step 4: Render the `.qmd` file and save the output `.pptx` file.
 
 # Swiss TPH MS Word template
 
+* NOTE for Word template: Please avoid using this template together with landscape mode. There is an existing problem with cover page pictures showing with the use of landscape mode.
+
 Step 1: Download the `_extensions/word-report/` folder into your working directory. **IMPORTANT**: Do not change the directory structure. The path to this folder must remain `./_extensions/report/` relative to your current working directory; otherwise, rendering will fail.
 
 Step 2: Download the remaining required file into your working directory:
