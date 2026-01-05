@@ -27,18 +27,17 @@ Step 4: Render the `.qmd` file and save the output `.pptx` file.
 
 # Swiss TPH MS Word template
 
-Step 1: Download all necessary files into your working directory. They must be located in the same folder.
+Step 1: Download the `_extensions/word-report/` folder into your working directory. **IMPORTANT**: Do not change the directory structure. The path to this folder must remain `./_extensions/report/` relative to your current working directory; otherwise, rendering will fail.
 
-- [report_template1.docx](./report_template1.docx)
+Step 2: Download the remaining required file into your working directory:
+
 - [word_report_demo.qmd](./word_report_demo.qmd)
-- [\_word\_metadata.yml](./_word_metadata.yml)
-- [docx-landscape.lua](./docx-landscape.lua)
 
-Step 2: Open `word_report_demo.qmd` in RStudio. We recommend creating an R project (`.Rproj`) in the same directory to ensure your working directory is correctly set.
+Step 3: Open `word_report_demo.qmd` in RStudio. We recommend creating an R project (`.Rproj`) in the same directory to ensure your working directory is correctly set.
 
-Step 3: Modify the `.qmd` file as needed. For general guidance on using Quarto with MS Word, please refer to: [Word Basics - Quarto](https://quarto.org/docs/output-formats/ms-word.html).
+Step 4: Modify the `.qmd` file as needed. For general guidance on using Quarto with MS Word, please refer to: [Word Basics - Quarto](https://quarto.org/docs/output-formats/ms-word.html).
 
-Step 4: Render the `.qmd` file and save the output `.docx` file.
+Step 5: Render the `.qmd` file and save the output `.docx` file.
 
 # Swiss TPH PDF report template
 
