@@ -19,7 +19,7 @@
 \definecolor{goldensand}{HTML}{EDCD64}
 \definecolor{limegreen}{HTML}{B5C752}
 
-% Define font sizes for headers
+% Define font sizes for headers (levels 1 to 5)
 \titleformat{\section}
   {\normalfont\fontsize{18}{16.8}\bfseries\color{swisstphblue}}
   {\thesection.}
@@ -44,6 +44,11 @@
   {0em}
   {}
 
+\titleformat{\subparagraph}
+  {\normalfont\fontsize{10}{16.8}\bfseries\color{swisstphred}}
+  {}
+  {0em}
+  {}
 
 %% Set page size
 \geometry{a4paper, total={170mm,257mm}, left=20mm, top=20mm, bottom=20mm, right=20mm}
