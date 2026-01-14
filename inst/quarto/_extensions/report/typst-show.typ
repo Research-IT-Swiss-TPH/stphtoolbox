@@ -73,6 +73,9 @@ $endif$
 $if(toc-indent)$
   toc_indent: $toc-indent$,
 $endif$
+$if(numbering)$
+  numbering: "$numbering$",
+$endif$
 $if(TPH-logo)$
   TPH-logo: "$TPH-logo$",
 $endif$

@@ -3,17 +3,34 @@ title: "Swiss TPH Word report example"
 subtitle: "Sub-Title of Document Name of Project/Mandate, etc…"
 author:
   - name: Jane Doe
+    affiliations:
+      - ref: stph
+      - ref: unibas
+    corresponding: true
+    email: jand.doe@swisstph.ch
+    equal-contributor: true
     orcid: 0000-0000-0000-0000
   - name: John Doe
+    affiliations:
+      - ref: unibas
+    equal-contributor: true
     orcid: 0000-0000-0000-0000
+affiliations:
+  - id: stph
+    name: Swiss Tropical and Public Health Institute, Basel, Switzerland
+  - id: unibas
+    name: University of Basel, Basel, Switzerland
 date: today
 editor: visual
 execute:
   echo: false
   warning: false
-format: docx
-metadata-files:
-  - _word_metadata.yml
+filters:
+  - word-report
+format:
+  docx:
+    number-sections: true
+    reference-doc: _extensions/word-report/report_template1.docx
 ---
 
 ```{r}
