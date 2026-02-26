@@ -9,3 +9,6 @@ inst/revealjs/template_test.html
 inst/quarto/README_files/
 
 /.luarc.json
+inst/quarto/ppt_report_demo.pptx
+inst/quarto/word_report_demo.docx
+stphtoolbox.Rproj
