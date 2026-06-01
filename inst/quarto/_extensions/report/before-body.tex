@@ -3,8 +3,8 @@
 \AddToShipoutPicture*{
      % logo
     \AtPageLowerLeft{
-      \put(\LenToUnit{\dimexpr\paperwidth-1.13\paperwidth}, \LenToUnit{0.65\paperheight}){
-        \includegraphics[width=0.42\paperwidth]{_extensions/report/TPHicon.jpeg}
+      \put(\LenToUnit{\dimexpr\paperwidth-0.9\paperwidth}, \LenToUnit{0.1\paperheight}){
+        \includegraphics[width=2.4\paperwidth]{_extensions/report/SwissTPH_icon_2026.png}
       }%
     }%
 }
@@ -16,7 +16,7 @@ $date$
 
 \begingroup
      \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
-     \noindent{\Huge \bfseries \textcolor{swisstphblue}{$title$}\par}
+     \noindent{\Huge \bfseries \textcolor{swisstphindigo}{$title$}\par}
 \endgroup
 
 \vspace{1cm}
@@ -24,14 +24,14 @@ $date$
 $if(additional1)$
 \begingroup
       \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
-      \noindent{\Huge \textbf{\textcolor{swisstphblue}{$additional1$}} \par} % Additional line 1
+      \noindent{\Huge \textbf{\textcolor{swisstphindigo}{$additional1$}} \par} % Additional line 1
 \endgroup
 $endif$
 
 $if(additional2)$
 \begingroup
       \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
-      \noindent{\Huge \textbf{\textcolor{swisstphblue}{$additional2$}} \par} % Additional line 2
+      \noindent{\Huge \textbf{\textcolor{swisstphindigo}{$additional2$}} \par} % Additional line 2
 \endgroup
 $endif$
 
@@ -39,12 +39,12 @@ $endif$
 
 \begingroup
       \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
-      \noindent{\huge {\textcolor{swisstphred}{$subtitle$}} \par} % Subtitle of document
+      \noindent{\huge {$subtitle$} \par} % Subtitle of document
 \endgroup
 
 \begingroup
       \setlength{\leftskip}{2cm}% indent whole paragraph by 2cm
-      \noindent{\huge {\textcolor{swisstphred}{$projectname$}} \par} % Name of project
+      \noindent{\huge {$projectname$} \par} % Name of project
 \endgroup
 
 \vspace{0.5cm}
@@ -64,7 +64,7 @@ $endfor$
      % logo
     \AtPageLowerLeft{
       \put(\LenToUnit{\dimexpr\paperwidth-0.3\paperwidth}, \LenToUnit{0.05\paperheight}){
-        \includegraphics[width=0.2\paperwidth]{_extensions/report/TPHlogo4.png}
+        \includegraphics[width=0.2\paperwidth]{_extensions/report/SwissTPH_Logo_Screen_Indigo_rgb.png}
       }%
     }%
 }

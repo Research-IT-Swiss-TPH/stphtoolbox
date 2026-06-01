@@ -9,8 +9,8 @@ contributes:
       template-partials:
         - before-body.tex
         - after-body.tex
-      urlcolor: swisstphblue
-      linkcolor: swisstphblue
+      urlcolor: swisstphindigo
+      linkcolor: swisstphindigo
       number-sections: true
     typst:
       mainfont: "Microsoft Sans Serif"
