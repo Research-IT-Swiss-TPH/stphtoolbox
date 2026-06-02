@@ -1,6 +1,5 @@
 ---
 title: "Swiss TPH Powerpoint presentation example"
-subtitle: "My example subtitle"
 author: "Research IT"
 format: pptx
 editor: visual
@@ -42,7 +41,7 @@ Insert here to highlight the first point you would like to address.
 
 Short and sweet is more effective.
 
-## Two Contents
+<!-- ## Two Contents
 
 ::::: columns
 ::: {.column width="50%"}
@@ -121,4 +120,4 @@ as.data.frame(table(iris$Species)) %>%
   coord_polar("y", start = 0) +
   scale_fill_manual(values = stph_colors) +
   theme_void()
-```
+``` -->
