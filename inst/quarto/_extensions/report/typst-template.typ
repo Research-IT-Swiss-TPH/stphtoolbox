@@ -35,8 +35,8 @@
   toc_depth: none,
   toc_indent: 1.5em,
   numbering: none,
-  TPH-icon: "_extensions/report/TPHicon.jpeg",
-  TPH-logo: "_extensions/report/TPHlogo4.png",
+  TPH-icon: "_extensions/report/SwissTPH_icon_2026.png",
+  TPH-logo: "_extensions/report/SwissTPH_Logo_Screen_Indigo_rgb.png",
   mtop: none,
   mbottom: none,
   mleft: none,
@@ -63,65 +63,79 @@
       left: 40mm,
       right: mright
     ),
-    numbering: numbering,
+    numbering: none,
   )
 
   // Set the body font
   set text(11pt, font: "Arial")
 
-  // Links should be Swiss TPH blue
-  show link: set text(rgb(70, 138, 178))
+  // Links should be Swiss TPH indigo
+  show link: set text(rgb(67, 44, 161))
 
-  // Headings should be Swiss TPH blue
-  show heading: set text(rgb(70, 138, 178))
+  // Headings should be Swiss TPH indigo
+  show heading: set text(rgb(67, 44, 161))
+
+  // Tables should be breakable
+  show figure: set block(breakable: true)
+
+  // // Swiss TPH icon on top left
+  // context {
+  //   set align(left)
+  //   if TPH-icon != none {
+  //     let img = image(TPH-icon, width: 15cm)
+  //     let img-size = measure(img)
+
+  //     grid(
+  //       columns: img-size.width,
+  //       rows: img-size.height,
+  //       move(dx: 10cm, img),
+  //     )
+  //   }
+  // }
+
+  
+  // // Swiss TPH 4-line logo on bottom right
+  // context {
+  //   set align(left)
+  //   if TPH-logo != none {
+  //     let img = image(TPH-logo, width: 4cm)
+  //     let img-size = measure(img)
+
+  //     grid(
+  //       columns: img-size.width,
+  //       rows: img-size.height,
+  //       move(dx: 12cm, dy: 15.5cm, img),
+  //     )
+  //   }
+  // }
 
   // Swiss TPH icon on top left
-  context {
-    set align(left)
-    if TPH-icon != none {
-      let img = image(TPH-icon, width: 7cm)
-      let img-size = measure(img)
-
-      grid(
-        columns: img-size.width,
-        rows: img-size.height,
-        move(dx: -6cm, img),
-      )
-    }
+  if TPH-icon != none {
+    place(top + left, dx: 5cm, dy: 0cm, image(TPH-icon, width: 18cm))
   }
 
   // Swiss TPH 4-line logo on bottom right
-  context {
-    set align(left)
-    if TPH-logo != none {
-      let img = image(TPH-logo, width: 4cm)
-      let img-size = measure(img)
-
-      grid(
-        columns: img-size.width,
-        rows: img-size.height,
-        move(dx: 12cm, dy: 15.5cm, img),
-      )
-    }
+  if TPH-logo != none {
+    place(top + left, dx: 12cm, dy: 20.5cm, image(TPH-logo, width: 4cm))
   }
 
-  v(-3cm)
+  v(7cm)
   // Title and authors
   if title != none {
-    align(left, text(20pt, rgb(70, 138, 178), weight: 800, title))
+    align(left, text(20pt, rgb(67, 44, 161), weight: 800, title))
   }
   v(1cm)
   if additional1 != none {
-    align(left, text(20pt, rgb(70, 138, 178), weight: 800, additional1))
+    align(left, text(20pt, rgb(67, 44, 161), weight: 800, additional1))
   }
   if additional2 != none {
-    align(left, text(20pt, rgb(70, 138, 178), weight: 800, additional2))
+    align(left, text(20pt, rgb(67, 44, 161), weight: 800, additional2))
   }
   if subtitle != none {
-    align(left, text(20pt, rgb(191, 50, 39), subtitle))
+    align(left, text(20pt, rgb(0, 0, 0), subtitle))
   }
   if projectname != none {
-    align(left, text(20pt, rgb(191, 50, 39), projectname))
+    align(left, text(20pt, rgb(0, 0, 0), projectname))
   }
   if authors != none {
     for author in authors {
@@ -132,7 +146,7 @@
         align(left, text(author.affiliation))
       }
       if author.name != none{
-        align(left, text(fill: rgb(70, 138, 178), author.email))
+        align(left, text(fill: rgb(67, 44, 161), author.email))
       }
     }
   }

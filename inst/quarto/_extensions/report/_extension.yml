@@ -23,5 +23,5 @@ contributes:
         - typst-template.typ
         - typst-show.typ
       format-resources:
-        - TPHlogo4.png
-        - TPHicon.jpeg
+        - SwissTPH_Logo_Screen_Indigo_rgb.png
+        - SwissTPH_icon_2026.png
