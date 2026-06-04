@@ -35,7 +35,7 @@
   toc_depth: none,
   toc_indent: 1.5em,
   numbering: none,
-  TPH-icon: "_extensions/report/SwissTPH_icon_2026.png",
+  TPH-icon: "_extensions/report/SwissTPH_icon_typst.png",
   TPH-logo: "_extensions/report/SwissTPH_Logo_Screen_Indigo_rgb.png",
   mtop: none,
   mbottom: none,
@@ -111,7 +111,7 @@
 
   // Swiss TPH icon on top left
   if TPH-icon != none {
-    place(top + left, dx: 5cm, dy: 0cm, image(TPH-icon, width: 18cm))
+    place(top + left, dx: -4cm, dy: -0.5cm, image(TPH-icon, width: 21.6cm))
   }
 
   // Swiss TPH 4-line logo on bottom right
