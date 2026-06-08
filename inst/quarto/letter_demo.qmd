@@ -31,10 +31,11 @@ sender:
 ```
 
 \placetextbox{18mm}{20mm}{l}{
-\textbf{\nothing{}{{< meta sender.first_name >}} {{< meta sender.last_name >}}}\\
-{{< meta sender.email >}}\\
-Mobile {{< meta sender.phone >}}
+\textcolor{gray}{\textbf{\nothing{}{{< meta sender.first_name >}} {{< meta sender.last_name >}}}}\\
+\textcolor{gray}{\nothing{}{{< meta sender.email >}}}\\
+\textcolor{gray}{Mobile {{< meta sender.phone >}}}
 }
+
 
 
 `r params$prefix` `r params$first_name` `r params$last_name`
