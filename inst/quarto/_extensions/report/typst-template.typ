@@ -114,12 +114,17 @@
     place(top + left, dx: -4cm, dy: -0.5cm, image(TPH-icon, width: 21.6cm))
   }
 
-  // Swiss TPH 4-line logo on bottom right
+  // Swiss TPH logo on bottom right
   if TPH-logo != none {
-    place(top + left, dx: 12cm, dy: 20.5cm, image(TPH-logo, width: 4cm))
+    place(top + left, dx: 12cm, dy: 22.5cm, image(TPH-logo, width: 4cm))
   }
 
   v(7cm)
+  // Date above the title
+  if date != none {
+    align(left, text(11pt, rgb(0, 0, 0), date))
+    v(0.3cm)
+  }
   // Title and authors
   if title != none {
     align(left, text(20pt, rgb(67, 44, 161), weight: 800, title))
