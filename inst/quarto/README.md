@@ -15,7 +15,7 @@ Our templates function as Quarto extensions. Extensions are a powerful way to mo
 
 Step 1: Download all necessary files into your working directory. They must be located in the same folder.
 
-- [ppt_template1.pptx](./ppt_template1.pptx)
+- [ppt_template1.pptx](./ppt_template2.pptx)
 - [ppt_report_demo.qmd](./ppt_report_demo.qmd)
 - [\_ppt\_metadata.yml](./_ppt_metadata.yml)
 
