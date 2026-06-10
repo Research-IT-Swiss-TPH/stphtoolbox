@@ -55,13 +55,21 @@
       right: mright
     ),
     numbering: numbering,
+    background: if TPH-logo != none {
+      place(top + right, dx: -1cm, dy: 1cm, image(TPH-logo, width: 5cm))
+    },
+    footer: text(size: 9pt, fill: gray)[
+      *Swiss TPH*, Kreuzstrasse 2, 4123 Allschwil, Switzerland #h(1fr) Associated Institute of the University of Basel \
+      Phone +41 61 284 81 11, Fax +41 61 284 81 01, www.swisstph.ch
+    ],
   )
-  
+
   set text(font: font, size: fontsize)
 
-  if TPH-logo != none {
-    place(top + right, dy: -3.5cm, image(TPH-logo, width: 5cm))
-  }
+  // Logo moved to set page(background:) so it appears on every page — old first-page-only block commented out
+  // if TPH-logo != none {
+  //   place(top + right, dy: -3.5cm, image(TPH-logo, width: 5cm))
+  // }
   
   v(-2.5cm)
   grid(columns: (50%, 50%),
