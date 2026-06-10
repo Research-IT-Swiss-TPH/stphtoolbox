@@ -4,7 +4,13 @@ format:
   letter-pdf:
     pdf-engine: xelatex
 date: last-modified
-mainfont: Arial
+mainfont: Aptos
+mainfontoptions: 
+  - Path = C:/Users/zhuzh/AppData/Local/Microsoft/Windows/Fonts/
+  - Extension = .ttf
+  - BoldFont = Aptos-Bold
+  - ItalicFont = Aptos-Italic
+  - BoldItalicFont = Aptos-Bold-Italic
 fontsize: 11pt
 lang: en
 execute: 
