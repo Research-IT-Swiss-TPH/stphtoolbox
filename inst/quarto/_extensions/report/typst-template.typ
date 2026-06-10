@@ -67,7 +67,7 @@
   )
 
   // Set the body font
-  set text(11pt, font: "Arial")
+  set text(11pt, font: "Aptos")
 
   // Links should be Swiss TPH indigo
   show link: set text(rgb(67, 44, 161))
@@ -77,37 +77,6 @@
 
   // Tables should be breakable
   show figure: set block(breakable: true)
-
-  // // Swiss TPH icon on top left
-  // context {
-  //   set align(left)
-  //   if TPH-icon != none {
-  //     let img = image(TPH-icon, width: 15cm)
-  //     let img-size = measure(img)
-
-  //     grid(
-  //       columns: img-size.width,
-  //       rows: img-size.height,
-  //       move(dx: 10cm, img),
-  //     )
-  //   }
-  // }
-
-  
-  // // Swiss TPH 4-line logo on bottom right
-  // context {
-  //   set align(left)
-  //   if TPH-logo != none {
-  //     let img = image(TPH-logo, width: 4cm)
-  //     let img-size = measure(img)
-
-  //     grid(
-  //       columns: img-size.width,
-  //       rows: img-size.height,
-  //       move(dx: 12cm, dy: 15.5cm, img),
-  //     )
-  //   }
-  // }
 
   // Swiss TPH icon on top left
   if TPH-icon != none {
