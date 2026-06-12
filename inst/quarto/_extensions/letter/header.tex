@@ -1,16 +1,26 @@
 % load packages
 \usepackage{geometry}
 \usepackage[pscoord]{eso-pic}
-\usepackage{paracol}
-\usepackage{setspace}
-\usepackage{tabularx}
 \usepackage{titlesec}
-\usepackage[most]{tcolorbox}
 \usepackage{fancyhdr}
 
 % Just a command doing nothing
 % It's to separate different levels of brackets
 \newcommand{\nothing}[1]{}
+
+%% Body font: Aptos, falling back to Arial when Aptos is not installed.
+%% Applies only when no `mainfont` was set in the YAML header — a YAML
+%% mainfont changes \rmdefault away from the LaTeX default (cmr/lmr), so we
+%% leave it alone in that case. Requires xelatex/lualatex.
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\ifboolexpr{ test {\ifdefstring{\rmdefault}{cmr}} or test {\ifdefstring{\rmdefault}{lmr}} }{%
+  \IfFontExistsTF{Aptos}{%
+    \setmainfont{Aptos}%
+  }{%
+    \IfFontExistsTF{Arial}{\setmainfont{Arial}}{}%
+  }%
+}{}
 
 % Define Swiss TPH colors
 % swisstphred and swisstphblue are deprecated brand identity
@@ -29,7 +39,7 @@
   {}
 
 %% Set page size
-\geometry{a4paper, total={170mm,257mm}, left=20mm, top=52.5mm, bottom=15mm, right=20mm}
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=52.5mm, bottom=15mm, right=20mm, footskip=8mm}
 
 %% A useful function that can flexibly put text box
 %% Source: https://tex.stackexchange.com/questions/24663/how-to-place-a-floating-text-box-at-a-specified-location-in-page-coordinates
