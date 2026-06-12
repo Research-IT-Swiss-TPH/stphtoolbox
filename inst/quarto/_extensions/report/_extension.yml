@@ -13,7 +13,7 @@ contributes:
       linkcolor: swisstphindigo
       number-sections: true
     typst:
-      mainfont: "Microsoft Sans Serif"
+      mainfont: "Aptos"
       margin:
         top: 20mm
         bottom: 20mm
