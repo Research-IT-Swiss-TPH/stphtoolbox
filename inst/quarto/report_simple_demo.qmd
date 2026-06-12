@@ -176,7 +176,7 @@ See [Callout Blocks](https://quarto.org/docs/authoring/callouts.html) for more d
 
 \begin{tcolorbox}[colback=white,colframe=swisstphindigo,title=Swiss TPH Callout Box]
 
-Or you can create more flexible callout blocks with LaTeX. Just like this one with Swiss TPH lime green.
+Or you can create more flexible callout blocks with LaTeX. Just like this one with Swiss TPH indigo.
 
 \end{tcolorbox}
 
