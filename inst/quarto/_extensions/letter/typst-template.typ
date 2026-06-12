@@ -18,7 +18,7 @@
   abstract: none,
   abstract-title: none,
   cols: 1,
-  paper: "us-letter",
+  paper: "a4",
   lang: "en",
   region: "US",
   font: none,
@@ -83,7 +83,7 @@
       #text()[#sphone]
     ]
   )
-  v(2.5cm)
+  v(1.5cm)
   
   set par(justify: true)
   set heading(numbering: sectionnumbering)
