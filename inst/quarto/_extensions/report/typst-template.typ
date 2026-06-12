@@ -24,11 +24,11 @@
   abstract: none,
   abstract-title: none,
   cols: 1,
-  paper: "us-letter",
+  paper: "a4",
   lang: "en",
   region: "US",
-  font: none,
-  fontsize: none,
+  font: "Aptos",
+  fontsize: 11pt,
   sectionnumbering: none,
   toc: false,
   toc_title: none,
@@ -67,7 +67,7 @@
   )
 
   // Set the body font
-  set text(11pt, font: "Aptos")
+  set text(font: font, size: fontsize)
 
   // Links should be Swiss TPH indigo
   show link: set text(rgb(67, 44, 161))
@@ -85,7 +85,7 @@
 
   // Swiss TPH logo on bottom right
   if TPH-logo != none {
-    place(top + left, dx: 12cm, dy: 22.5cm, image(TPH-logo, width: 4cm))
+    place(top + left, dx: 12cm, dy: 26.5cm, image(TPH-logo, width: 4cm))
   }
 
   v(7cm)
