@@ -31,6 +31,58 @@ sender:
   phone: +41 79 xxx xx xx
 ---
 
+<!--
+================================================================================
+GUIDE TO THE YAML HEADER ABOVE  (this block is a comment; it does NOT render)
+================================================================================
+
+SAFE TO CUSTOMISE — change these freely:
+
+  title:        Document title metadata. Not shown on the letter body. Any text.
+
+  date:         "last-modified" auto-fills from the file's mtime. Can be a
+                fixed date or removed. (Note the letter body also prints a date
+                via R: format(Sys.Date(), "%d.%m.%Y").)
+
+  fontsize:     Base text size (e.g. 11pt, 12pt).
+  lang:         Document language for hyphenation (e.g. en, de, fr).
+
+  params:       RECIPIENT details (prefix, first_name, last_name, organisation,
+                address, zip, city). Edit the VALUES freely. These are printed
+                in the letter body via `r params$first_name` etc. — if you
+                RENAME a key here you must update the matching body reference.
+
+  sender:       SENDER details (first_name, last_name, email, phone). Edit the
+                VALUES freely. Printed in the body via the
+                {{< meta sender.first_name >}} shortcodes — RENAME a key here
+                and you must update the matching shortcode in the body.
+
+CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING — these can break rendering:
+
+  format: letter-pdf
+                The Swiss TPH letter extension (lives in _extensions/letter/).
+                Supplies letterhead, colours (swisstphindigo), and layout.
+                Do NOT rename, move, or delete _extensions/.
+
+  pdf-engine: xelatex
+                Required so the custom system font (below) works. Switching to
+                pdflatex breaks system-font support — leave as xelatex (or
+                lualatex).
+
+  mainfont: Aptos  +  mainfontoptions:
+                >>> MACHINE-SPECIFIC <<< The Path = C:/Users/zhuzh/AppData/...
+                points to ONE user's font folder. On another computer this
+                path will not exist and the render fails. To fix on your
+                machine: update Path to your own font directory, OR delete the
+                mainfont + mainfontoptions block to fall back to the default
+                font.
+
+  execute: { echo: false, warning: false }
+                Hides R code and warnings. echo: true dumps R source into the
+                letter body.
+================================================================================
+-->
+
 ```{r}
 # Put a R chunk here even if you don't need it
 # to make sure the rendering works well

@@ -26,6 +26,55 @@ toc-depth: 3
 bibliography: references.bib
 ---
 
+<!--
+================================================================================
+GUIDE TO THE YAML HEADER ABOVE  (this block is a comment; it does NOT render)
+================================================================================
+
+This is the TYPST version of the report. Typst has its own built-in engine, so
+there is NO pdf-engine line and NO machine-specific font path — the Aptos font
+is set inside the extension (_extensions/report/), so this file renders the
+same on any machine. (Typst falls back gracefully if Aptos is not installed.)
+
+SAFE TO CUSTOMISE — change these freely (all are text on the cover / body):
+
+  title:        Main document title.
+  additional1 / additional2:
+                Two extra free-text lines on the cover page (custom Swiss TPH
+                fields). Keep both keys present even if you leave one empty.
+  subtitle:     Document subtitle.
+  projectname:  Project / mandate name shown on the cover.
+  author:       List of authors. Edit values (name, affiliation, email) and
+                add/remove whole entries. KEEP the "- name:" structure.
+  date:         "last-modified" auto-fills from the file's mtime. Can be a
+                fixed date (e.g. 2026-06-15) or removed.
+  fontsize:     Base text size (e.g. 11pt, 12pt).
+  lang:         Document language (e.g. en, de, fr).
+  toc:          true/false — show the table of contents. Safe to flip.
+  toc-depth:    How many heading levels appear in the TOC.
+  section-numbering: "1.1.1"
+                Heading-numbering scheme. "1.1.1" = numerals at every level.
+                e.g. "1.A.a" would number subsections with letters. Safe to
+                edit; set to "" or remove to switch numbering off.
+  numbering: 1  Page-numbering style (1 = arabic numerals).
+
+CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING — these can break rendering:
+
+  format: report-typst
+                The Swiss TPH Typst extension (lives in _extensions/report/).
+                Supplies the cover page, colours, font, and layout. Do NOT
+                rename, move, or delete _extensions/.
+
+  execute: { echo: false, warning: false }
+                Hides R code and warnings. echo: true dumps R source into the
+                PDF body.
+
+  bibliography: references.bib
+                Citation source for @-references. Keep references.bib in this
+                working directory, or citations fail to resolve.
+================================================================================
+-->
+
 ```{r}
 # Put a R chunk here even if you don't need it
 # to make sure the rendering works well
