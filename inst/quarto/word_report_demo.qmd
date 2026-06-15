@@ -21,7 +21,7 @@ affiliations:
   - id: unibas
     name: University of Basel, Basel, Switzerland
 date: today
-editor: visual
+editor: source
 execute:
   echo: false
   warning: false
@@ -32,6 +32,60 @@ format:
     number-sections: true
     reference-doc: _extensions/word-report/report_template2.docx
 ---
+
+```{=html}
+<!--
+================================================================================
+GUIDE TO THE YAML HEADER ABOVE  (this block is a comment; it does NOT render)
+================================================================================
+
+SAFE TO CUSTOMISE — change these freely:
+
+  title / subtitle:
+            Document title and subtitle. Any text.
+
+  author:   List of authors. Edit the values (name, email, orcid,
+            corresponding, equal-contributor) freely, and add/remove whole
+            author entries. KEEP the structure (each entry is a "- name:" with
+            its indented fields).
+            GOTCHA: each author's "- ref:" under affiliations MUST match an
+            "id:" in the affiliations block below. ref: stph -> id: stph.
+            A ref with no matching id drops the affiliation silently.
+
+  affiliations:
+            Defines the organisations referenced above. Edit id/name, add or
+            remove entries. If you rename an "id:", update every author "ref:"
+            that points to it.
+
+  date:     "today" auto-fills the render date. Can also be a fixed date
+            (e.g. 2026-06-15) or removed.
+
+  editor:   RStudio editing mode only (visual vs source). No effect on the
+            rendered .docx. Safe to change or remove.
+
+  number-sections: true
+            Toggles automatic heading numbers. true/false — safe to flip.
+
+CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING — these can break rendering:
+
+  execute: { echo: false, warning: false }
+            Hides R code and warnings. Setting echo: true dumps R source into
+            the document body.
+
+  filters:
+    - word-report
+            Activates the Swiss TPH "word-report" Quarto extension (lives in
+            _extensions/word-report/). Removing this line drops the Swiss TPH
+            formatting. Do NOT delete or rename.
+
+  format: docx -> reference-doc: _extensions/word-report/report_template2.docx
+            The Word template supplying Swiss TPH styles (headings, cover,
+            fonts). The path points INTO the _extensions/ folder — do NOT move,
+            rename, or relocate _extensions/ or this .docx, or the render fails
+            or loses all styling.
+================================================================================
+-->
+```
 
 ```{r}
 # Reader

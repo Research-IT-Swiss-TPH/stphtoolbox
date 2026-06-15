@@ -2,10 +2,57 @@
 title: "Swiss TPH Powerpoint presentation example"
 author: "Research IT"
 format: pptx
-editor: visual
+editor: source
 metadata-files:
   - _ppt_metadata.yml
 ---
+
+<!--
+================================================================================
+GUIDE TO THE YAML HEADER ABOVE  (this block is a comment; it does NOT render)
+================================================================================
+
+SAFE TO CUSTOMISE — change these freely:
+
+  title:    Presentation title shown on the title slide. Any text.
+  author:   Presenter name shown on the title slide. Any text.
+  editor:   Only affects the RStudio editing experience (visual vs source).
+            Has no effect on the rendered .pptx. Safe to change or remove.
+
+CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING — these can break rendering:
+
+  format: pptx
+            Selects the PowerPoint output format and the Quarto machinery
+            behind it. Changing the format value re-routes everything; do not
+            edit unless you intend to switch output type entirely.
+
+  metadata-files:
+    - _ppt_metadata.yml
+            Pulls in extra settings from the companion file _ppt_metadata.yml
+            (see below). Keep this line and keep _ppt_metadata.yml in the SAME
+            working directory as this .qmd, or rendering loses the template and
+            the execute options.
+
+SETTINGS LIVING IN _ppt_metadata.yml (edit there, not here) — handle with care:
+
+  reference-doc: ppt_template2.pptx
+            The PowerPoint template providing the Swiss TPH slide layouts
+            (Title Slide, Title and Content, Section Header, Two Content,
+            Comparison, Content with Caption, Blank). The .pptx must sit in
+            this working directory. Replacing it with a file that lacks these
+            named layouts will break or mis-style slides. Do NOT rename or move.
+
+  execute: { echo: false, warning: false }
+            Hides R code and warnings in the output. Setting echo: true dumps
+            all R source onto the slides — usually not what you want for a
+            presentation.
+
+NOTE ON CONTENT STRUCTURE (not YAML, but it controls slides):
+  Level-1 headings (#) create SECTION slides; level-2 headings (##) create
+  CONTENT slides. This is the slide-level convention the template expects —
+  keep the # / ## pattern below intact.
+================================================================================
+-->
 
 # Introduction to Quarto
 

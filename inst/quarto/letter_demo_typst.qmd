@@ -24,6 +24,53 @@ sender:
   phone: +41 79 xxx xx xx
 ---
 
+<!--
+================================================================================
+GUIDE TO THE YAML HEADER ABOVE  (this block is a comment; it does NOT render)
+================================================================================
+
+This is the TYPST version of the letter. Typst has its own built-in engine, so
+there is NO pdf-engine line and NO machine-specific font path — so this file
+renders the same on any machine. (Typst falls back gracefully if Aptos is not
+installed.)
+
+SAFE TO CUSTOMISE — change these freely:
+
+  title:        Document title metadata. Not shown on the letter body. Any text.
+
+  date:         "last-modified" auto-fills from the file's mtime. Can be a
+                fixed date or removed. (The letter body also prints a date via
+                R: format(Sys.Date(), "%d.%m.%Y").)
+
+  mainfont:     Body typeface. "Aptos" is the Swiss TPH default; Typst searches
+                installed system fonts by name. Safe to change or remove (falls
+                back to the extension default).
+  fontsize:     Base text size (e.g. 11pt, 12pt).
+  lang:         Document language (e.g. en, de, fr).
+
+  params:       RECIPIENT details (prefix, first_name, last_name, organisation,
+                address, zip, city). Edit the VALUES freely. Printed in the
+                letter body via `r params$first_name` etc. — if you RENAME a
+                key here you must update the matching body reference.
+
+  sender:       SENDER details (first_name, last_name, email, phone). Edit the
+                VALUES freely. Printed in the body via the
+                {{< meta sender.first_name >}} shortcodes — RENAME a key here
+                and you must update the matching shortcode in the body.
+
+CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING — these can break rendering:
+
+  format: letter-typst
+                The Swiss TPH Typst letter extension (lives in
+                _extensions/letter/). Supplies letterhead, colours, and layout.
+                Do NOT rename, move, or delete _extensions/.
+
+  execute: { echo: false, warning: false }
+                Hides R code and warnings. echo: true dumps R source into the
+                letter body.
+================================================================================
+-->
+
 ```{r}
 # Put a R chunk here even if you don't need it
 # to make sure the rendering works well
