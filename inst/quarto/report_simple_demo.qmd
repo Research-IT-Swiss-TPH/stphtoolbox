@@ -19,7 +19,13 @@ format:
   report-pdf:
     pdf-engine: xelatex
 date: last-modified
-mainfont: Arial
+mainfont: Aptos
+mainfontoptions: 
+  - Path = C:/Users/zhuzh/AppData/Local/Microsoft/Windows/Fonts/
+  - Extension = .ttf
+  - BoldFont = Aptos-Bold
+  - ItalicFont = Aptos-Italic
+  - BoldItalicFont = Aptos-Bold-Italic
 fontsize: 11pt
 lang: en
 execute: 
@@ -27,7 +33,7 @@ execute:
   warning: false
 toc: true
 toc-depth: 3
-toc-title: \textcolor{swisstphblue}{TABLE OF CONTENTS}
+toc-title: \textcolor{swisstphindigo}{TABLE OF CONTENTS}
 bibliography: references.bib
 ---
 
@@ -97,7 +103,7 @@ data <- head(mtcars, 5) %>%
 ft <- flextable(data) %>%
   # Style headers
   bold(part = "header") %>% 
-  bg(part = "header", bg = "#468AB2") %>% 
+  bg(part = "header", bg = "#432CA1") %>% 
   color(part = "header", color = "white") %>% 
   # Style body
   bg(bg = "white", part = "body") %>% 
@@ -168,16 +174,16 @@ Note that there are five types of callouts, including:
 
 See [Callout Blocks](https://quarto.org/docs/authoring/callouts.html) for more details.
 
-\begin{tcolorbox}[colback=white,colframe=limegreen,title=Swiss TPH Callout Box]
+\begin{tcolorbox}[colback=white,colframe=swisstphindigo,title=Swiss TPH Callout Box]
 
-Or you can create more flexible callout blocks with LaTeX. Just like this one with Swiss TPH lime green.
+Or you can create more flexible callout blocks with LaTeX. Just like this one with Swiss TPH indigo.
 
 \end{tcolorbox}
 
 \vspace{2cm}
 
 \begin{large}
-\textcolor{swisstphblue}{\textbf{References}}
+\textcolor{swisstphindigo}{\textbf{References}}
 \end{large}
 
 ::: {#refs}

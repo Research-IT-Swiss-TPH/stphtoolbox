@@ -30,7 +30,7 @@ filters:
 format:
   docx:
     number-sections: true
-    reference-doc: _extensions/word-report/report_template1.docx
+    reference-doc: _extensions/word-report/report_template2.docx
 ---
 
 ```{r}

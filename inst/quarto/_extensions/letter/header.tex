@@ -1,32 +1,45 @@
 % load packages
 \usepackage{geometry}
 \usepackage[pscoord]{eso-pic}
-\usepackage{paracol}
-\usepackage{setspace}
-\usepackage{tabularx}
 \usepackage{titlesec}
-\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr}
 
 % Just a command doing nothing
 % It's to separate different levels of brackets
 \newcommand{\nothing}[1]{}
 
+%% Body font: Aptos, falling back to Arial when Aptos is not installed.
+%% Applies only when no `mainfont` was set in the YAML header — a YAML
+%% mainfont changes \rmdefault away from the LaTeX default (cmr/lmr), so we
+%% leave it alone in that case. Requires xelatex/lualatex.
+\usepackage{fontspec}
+\usepackage{etoolbox}
+\ifboolexpr{ test {\ifdefstring{\rmdefault}{cmr}} or test {\ifdefstring{\rmdefault}{lmr}} }{%
+  \IfFontExistsTF{Aptos}{%
+    \setmainfont{Aptos}%
+  }{%
+    \IfFontExistsTF{Arial}{\setmainfont{Arial}}{}%
+  }%
+}{}
+
 % Define Swiss TPH colors
-\definecolor{swisstphred}{HTML}{BF3227}
-\definecolor{swisstphblue}{HTML}{468AB2}
+% swisstphred and swisstphblue are deprecated brand identity
+%\definecolor{swisstphred}{HTML}{BF3227}
+%\definecolor{swisstphblue}{HTML}{468AB2}
 \definecolor{pureblack}{HTML}{222222}
 \definecolor{goldensand}{HTML}{EDCD64}
 \definecolor{limegreen}{HTML}{B5C752}
+\definecolor{swisstphindigo}{HTML}{432CA1}
 
 % Define font sizes for headers
 \titleformat{\section}
-  {\normalfont\fontsize{11}{16.8}\bfseries\color{swisstphblue}}
+  {\normalfont\fontsize{11}{16.8}\bfseries\color{swisstphindigo}}
   {\thesection.}
   {1em}
   {}
 
 %% Set page size
-\geometry{a4paper, total={170mm,257mm}, left=20mm, top=52.5mm, bottom=15mm, right=20mm}
+\geometry{a4paper, total={170mm,257mm}, left=20mm, top=52.5mm, bottom=15mm, right=20mm, footskip=8mm}
 
 %% A useful function that can flexibly put text box
 %% Source: https://tex.stackexchange.com/questions/24663/how-to-place-a-floating-text-box-at-a-specified-location-in-page-coordinates
@@ -41,13 +54,26 @@
   }%
 }%
 
+%% Footer on every page (no page number)
+\newcommand{\tphfooter}{\footnotesize\color{gray}
+  \begin{minipage}{\textwidth}
+  \textbf{Swiss TPH}, Kreuzstrasse 2, 4123 Allschwil, Switzerland \hfill Associated Institute of the University of Basel\\
+  Phone +41 61 284 81 11, Fax +41 61 284 81 01, www.swisstph.ch
+  \end{minipage}}
+
+\pagestyle{fancy}
+\fancyhf{}                          % clear header+footer (also removes page number)
+\renewcommand{\headrulewidth}{0pt}  % no header rule
+\fancyfoot[L]{\tphfooter}
+\fancypagestyle{plain}{\fancyhf{}\renewcommand{\headrulewidth}{0pt}\fancyfoot[L]{\tphfooter}}
+
 
 %%
 \AddToShipoutPicture{
      % logo
     \AtPageLowerLeft{
-      \put(\LenToUnit{\dimexpr\paperwidth-0.93\paperwidth}, \LenToUnit{0.88\paperheight}){
-        \includegraphics[width=0.25\paperwidth]{_extensions/letter/TPHlogo.png}
+      \put(\LenToUnit{\dimexpr\paperwidth-0.32\paperwidth}, \LenToUnit{0.92\paperheight}){
+        \includegraphics[width=0.25\paperwidth]{_extensions/letter/SwissTPH_Logo_Screen_Indigo_rgb.png}
       }%
     }%
 }

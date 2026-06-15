@@ -4,7 +4,13 @@ format:
   letter-pdf:
     pdf-engine: xelatex
 date: last-modified
-mainfont: Arial
+mainfont: Aptos
+mainfontoptions: 
+  - Path = C:/Users/zhuzh/AppData/Local/Microsoft/Windows/Fonts/
+  - Extension = .ttf
+  - BoldFont = Aptos-Bold
+  - ItalicFont = Aptos-Italic
+  - BoldItalicFont = Aptos-Bold-Italic
 fontsize: 11pt
 lang: en
 execute: 
@@ -30,11 +36,12 @@ sender:
 # to make sure the rendering works well
 ```
 
-\placetextbox{2cm}{2cm}{r}{
-\textbf{\nothing{}{{< meta sender.first_name >}} {{< meta sender.last_name >}}}\\
-{{< meta sender.email >}}\\
-Mobile {{< meta sender.phone >}}
+\placetextbox{18mm}{20mm}{l}{
+\textcolor{gray}{\textbf{\nothing{}{{< meta sender.first_name >}} {{< meta sender.last_name >}}}}\\
+\textcolor{gray}{\nothing{}{{< meta sender.email >}}}\\
+\textcolor{gray}{Mobile {{< meta sender.phone >}}}
 }
+
 
 
 `r params$prefix` `r params$first_name` `r params$last_name`
@@ -50,7 +57,7 @@ Mobile {{< meta sender.phone >}}
 \vspace{2cm}
 
 \begin{large}
-\textcolor{swisstphblue}{\textbf{Subject}}
+\textcolor{swisstphindigo}{\textbf{Subject}}
 \end{large}
 
 Dear `r params$prefix` `r params$last_name`,

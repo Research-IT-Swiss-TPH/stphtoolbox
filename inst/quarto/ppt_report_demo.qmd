@@ -1,6 +1,5 @@
 ---
 title: "Swiss TPH Powerpoint presentation example"
-subtitle: "My example subtitle"
 author: "Research IT"
 format: pptx
 editor: visual
