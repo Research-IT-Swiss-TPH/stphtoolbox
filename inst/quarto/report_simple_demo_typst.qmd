@@ -11,7 +11,9 @@ author:
   - name: Sam Smith
     affiliation: Swiss TPH
     email: sam.smith@swisstph.ch
-format: report-typst
+format:
+  report-typst:
+    section-numbering: "1.1.1"
 numbering: 1
 date: last-modified
 fontsize: 11pt
