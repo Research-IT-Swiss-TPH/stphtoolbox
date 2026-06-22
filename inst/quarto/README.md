@@ -11,10 +11,6 @@ Our templates function as Quarto extensions. Extensions are a powerful way to mo
 - Swiss TPH PDF report template (LaTeX and Typst)
 - Swiss TPH PDF letter template (LaTeX and Typst)
 
-## About Font Aptos
-
-This font family is not installed by default on Swiss TPH laptops. You will need to install it yourself from Microsoft, and manually redirect the font to where your font family is installed (see demo files).
-
 ## AI Usage
 
 The latest versions of the PowerPoint and Word templates were developed with the help of Claude.

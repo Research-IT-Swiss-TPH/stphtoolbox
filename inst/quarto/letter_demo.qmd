@@ -2,15 +2,9 @@
 title: "letter_demo"
 format:
   letter-pdf:
-    pdf-engine: xelatex
+    pdf-engine: lualatex
 date: last-modified
 mainfont: Aptos
-mainfontoptions: 
-  - Path = C:/Users/zhuzh/AppData/Local/Microsoft/Windows/Fonts/
-  - Extension = .ttf
-  - BoldFont = Aptos-Bold
-  - ItalicFont = Aptos-Italic
-  - BoldItalicFont = Aptos-Bold-Italic
 fontsize: 11pt
 lang: en
 execute: 
@@ -64,18 +58,11 @@ CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING — these can break rendering:
                 Supplies letterhead, colours (swisstphindigo), and layout.
                 Do NOT rename, move, or delete _extensions/.
 
-  pdf-engine: xelatex
-                Required so the custom system font (below) works. Switching to
-                pdflatex breaks system-font support — leave as xelatex (or
-                lualatex).
+  pdf-engine: lualatex
+                Required so the custom system font (below) works.
 
-  mainfont: Aptos  +  mainfontoptions:
-                >>> MACHINE-SPECIFIC <<< The Path = C:/Users/zhuzh/AppData/...
-                points to ONE user's font folder. On another computer this
-                path will not exist and the render fails. To fix on your
-                machine: update Path to your own font directory, OR delete the
-                mainfont + mainfontoptions block to fall back to the default
-                font.
+  mainfont: Aptos
+                Swiss TPH brand identity font.
 
   execute: { echo: false, warning: false }
                 Hides R code and warnings. echo: true dumps R source into the
