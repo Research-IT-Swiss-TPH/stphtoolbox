@@ -127,9 +127,22 @@ generate_word_report <- function(qmd_filename,
 
 #' Generate a Powerpoint presentation using Quarto
 #'
-#' This function generates a standardized Quarto document in PPTX format.
+#' Renders a Swiss TPH `.qmd` to PPTX in the working directory. The `.qmd` must
+#' carry the Swiss TPH metadata in its own header (see "Required YAML header");
+#' the function then copies the companion files `_ppt_metadata.yml` and
+#' `ppt_template2.pptx` next to the `.qmd` and renders it.
+#'
+#' @section Required YAML header:
+#' The input `.qmd` must contain these lines (see `ppt_report_demo.qmd` for a
+#' full example), otherwise the function stops:
+#' \preformatted{
+#' format: pptx
+#' metadata-files:
+#'   - _ppt_metadata.yml
+#' }
 #'
 #' @param qmd_filename    Filename of the Quarto document to be processed (with *.qmd extension).
+#'                        Must already contain the required Swiss TPH header (see above).
 #' @param pptx_filename   Filename for the generated Quarto-rendered presentation (without *.pptx extension).
 #' @param filename_format Specify the filename format, options include an empty string (default) or "with_date".
 #' @param params          List of parameters to customize the report generation process (optional, default is an empty list).
@@ -161,32 +174,38 @@ generate_ppt_report <- function(qmd_filename,
     stop(paste("Could not find `", qmd_file, "` in `", cdir, "`. Please check and correct the parameter you passed as `qmd_filename` or change the working directory."), call. = FALSE)
   }
 
-  # Path to the Powerpoint metadata YAML configuration file file
-  metadata_yml <- system.file("quarto",
-                              "_ppt_metadata.yml",
-                              package = "stphtoolbox")
-
-  # Check if the Word metadata YAML configuration file exists
-  if ( metadata_yml == "" ) {
-    stop(paste("Could not find `_word_metadata.yml`. Try re-installing `stphtoolbox`."), call. = FALSE)
+  # The .qmd must declare the Swiss TPH PowerPoint metadata; refuse otherwise.
+  header <- readLines(qmd_file, warn = FALSE)
+  has_format   <- any(grepl("pptx", header, fixed = TRUE))
+  has_metadata <- any(grepl("_ppt_metadata.yml", header, fixed = TRUE))
+  if ( !has_format || !has_metadata ) {
+    stop(paste0("`", qmd_filename, "` is missing the required Swiss TPH header. ",
+                "Add `format: pptx` and `metadata-files: [_ppt_metadata.yml]` ",
+                "(see `?generate_ppt_report` or the `ppt_report_demo.qmd` template)."), call. = FALSE)
   }
 
-  # Copy files needed by the Word metadata YMAL configuration file in the current directory
-  file.copy(system.file("quarto", "ppt_template1.docx", package = "stphtoolbox"), cdir)
+  # Copy the companion files the .qmd header expects, next to the .qmd:
+  # _ppt_metadata.yml pulls in the template, ppt_template2.pptx is the template.
+  for (f in c("_ppt_metadata.yml", "ppt_template2.pptx")) {
+    src <- system.file("quarto", f, package = "stphtoolbox")
+    if ( src == "" ) {
+      stop(paste0("Could not find `", f, "`. Try re-installing `stphtoolbox`."), call. = FALSE)
+    }
+    file.copy(src, cdir, overwrite = TRUE)
+  }
 
   # Adjust the Powerpoint filename based on the specified format
   if (filename_format == "with_date") {
-    pptx_filename <- paste0(pptx_filename, '_',Sys.Date(),'.docx')
+    pptx_filename <- paste0(pptx_filename, '_',Sys.Date(),'.pptx')
   } else{
-    pptx_filename <- paste0(pptx_filename, '.docx')
+    pptx_filename <- paste0(pptx_filename, '.pptx')
   }
 
-  # Render the Quarto document to generate the Word report
+  # Render the Quarto document to generate the PowerPoint presentation
   quarto::quarto_render(input          = qmd_file,
                         output_format  = "pptx",
                         output_file    = pptx_filename,
                         execute_params = params,
-                        metadata_file  = metadata_yml,
                         quiet          = TRUE)
 
 }
