@@ -37,9 +37,24 @@ stph_palette <- function() {
 
 #' Generate a Microsoft Word report using Quarto
 #'
-#' This function generates a standardized Quarto document in DOCX format.
+#' Renders a Swiss TPH `.qmd` to DOCX in the working directory. The `.qmd` must
+#' carry the Swiss TPH styling in its own header (see "Required YAML header");
+#' the function then copies the bundled `_extensions/word-report/` extension
+#' next to the `.qmd` and renders it.
+#'
+#' @section Required YAML header:
+#' The input `.qmd` must contain these two lines (see `word_report_demo.qmd`
+#' for a full example), otherwise the function stops:
+#' \preformatted{
+#' filters:
+#'   - word-report
+#' format:
+#'   docx:
+#'     reference-doc: _extensions/word-report/report_template2.docx
+#' }
 #'
 #' @param qmd_filename    Filename of the Quarto document to be processed (with *.qmd extension).
+#'                        Must already contain the required Swiss TPH header (see above).
 #' @param docx_filename   Filename for the generated Quarto-rendered report (without *.docx extension).
 #' @param filename_format Specify the filename format, options include an empty string (default) or "with_date".
 #' @param params          List of parameters to customize the report generation process (optional, default is an empty list).
@@ -71,19 +86,28 @@ generate_word_report <- function(qmd_filename,
     stop(paste("Could not find `", qmd_file, "` in `", cdir, "`. Please check and correct the parameter you passed as `qmd_filename` or change the working directory."), call. = FALSE)
   }
 
-  # Path to the Word metadata YAML configuration file file
-  metadata_yml <- system.file("quarto",
-                              "_word_metadata.yml",
-                              package = "stphtoolbox")
-
-  # Check if the Word metadata YAML configuration file exists
-  if ( metadata_yml == "" ) {
-    stop(paste("Could not find `_word_metadata.yml`. Try re-installing `stphtoolbox`."), call. = FALSE)
+  # The .qmd must declare the Swiss TPH styling in its header; refuse otherwise.
+  header <- readLines(qmd_file, warn = FALSE)
+  has_filter   <- any(grepl("word-report", header, fixed = TRUE))
+  has_template <- any(grepl("reference-doc:.*word-report", header))
+  if ( !has_filter || !has_template ) {
+    stop(paste0("`", qmd_filename, "` is missing the required Swiss TPH header. ",
+                "Add `filters: [word-report]` and a `reference-doc:` pointing into ",
+                "`_extensions/word-report/` (see `?generate_word_report` or the ",
+                "`word_report_demo.qmd` template)."), call. = FALSE)
   }
 
-  # Copy files needed by the Word metadata YMAL configuration file in the current directory
-  file.copy(system.file("quarto", "report_template1.docx", package = "stphtoolbox"), cdir)
-  file.copy(system.file("quarto", "docx-landscape.lua", package = "stphtoolbox"),    cdir)
+  # Copy the bundled word-report extension next to the .qmd so Quarto can
+  # resolve the `word-report` filter and the `reference-doc:` template.
+  ext_src <- system.file("quarto", "_extensions", "word-report",
+                         package = "stphtoolbox")
+
+  if ( ext_src == "" ) {
+    stop("Could not find the `word-report` Quarto extension. Try re-installing `stphtoolbox`.", call. = FALSE)
+  }
+
+  dir.create(file.path(cdir, "_extensions"), showWarnings = FALSE)
+  file.copy(ext_src, file.path(cdir, "_extensions"), recursive = TRUE)
 
   # Adjust the Word filename based on the specified format
   if (filename_format == "with_date") {
@@ -97,7 +121,6 @@ generate_word_report <- function(qmd_filename,
                         output_format  = "docx",
                         output_file    = docx_filename,
                         execute_params = params,
-                        metadata_file  = metadata_yml,
                         quiet          = TRUE)
 
 }
