@@ -4,7 +4,7 @@ The Swiss TPH Toolbox (`stphtoolbox`) is an R package designed to facilitate [re
 
 ## Features
 
-* :page_facing_up: **Document templates**: streamline your research workflows with custom Swiss TPH templates (Word, Powerpoint).
+* :page_facing_up: **Document templates**: streamline your research workflows with custom Swiss TPH templates (Word, Powerpoint, PDF).
 * :bar_chart: **Graphic representation**: leverage the capabilities of `ggplot2` and create visually appealing graphics in accordance with the Swiss TPH branding guidelines.
 
 ## About
@@ -18,7 +18,7 @@ To install the `stphtoolbox` package on your workstation, you have two options:
 
 ### Download and build locally
 
-Download the master branch as a ZIP file and build the package locally.
+Download the main branch as a ZIP file and build the package locally.
 
 ### Install the latest released version (preferred option)
 
@@ -51,6 +51,8 @@ stphtoolbox::generate_word_report(qmd_filename  = "my_content_input.qmd",
 
 This will create a Word document by processing the content of your specified Quarto document "my_content_input.qmd" and save the resulting Word report as "my_word_report.docx" in your current working directory.
 
+Powerpoint presentations and PDF reports are generated the same way, using `generate_ppt_report()` and `generate_pdf_report()` respectively.
+
 ## Package development
 
 ### Bug reports and suggestions
@@ -59,4 +61,4 @@ If you encounter bugs or have suggestions for improvements, please open an issue
 
 ### Contributing
 
-Pull requests are welcome on the `development` branch. For major changes, please open an issue first to discuss what you would like to change.
+Pull requests are welcome on the `main` branch. For major changes, please open an issue first to discuss what you would like to change.
