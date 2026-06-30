@@ -2,8 +2,9 @@
 #'
 #' This function defines a color palette with carefully selected Swiss Tropical
 #' and Public Health Institute (Swiss TPH) color values. The palette includes
-#' various shades of red, blue, green, yellow, and grey, providing a visually
-#' harmonious set of colors for data visualization and presentation purposes.
+#' various shades of indigo, purple, yellow, red, blue, grey, and black,
+#' providing a visually harmonious set of colors for data visualization and
+#' presentation purposes.
 #'
 #' @return A vector containing color values for different shades.
 #'
@@ -11,27 +12,27 @@
 
 stph_palette <- function() {
 
-  red1    <- "#bf3227"
-  red2    <- "#eca7a1"
-  blue1   <- "#468ab2"
-  blue2   <- "#b3d0e1"
-  green1  <- "#b5c751"
-  green2  <- "#e1e8b9"
-  yellow1 <- "#edcd64"
-  yellow2 <- "#f7ebc1"
-  grey1   <- "#868686"
-  grey2   <- "#cecece"
+  indigo1 <- "#432ca1"
+  indigo2 <- "#d3d2fe"
+  yellow  <- "#dde24a"
+  red     <- "#ea6674"
+  purple1 <- "#998cfe"
+  purple2 <- "#3a0176"
+  blue    <- "#c0ceff"
+  grey1   <- "#9898b2"
+  grey2   <- "#dddcea"
+  black   <- "#000000"
 
-  stph_colors <- c(red1,
-                   blue1,
-                   green1,
-                   yellow1,
+  stph_colors <- c(indigo1,
+                   yellow,
+                   red,
+                   purple1,
+                   blue,
                    grey1,
-                   red2,
-                   blue2,
-                   green2,
-                   yellow2,
-                   grey2)
+                   indigo2,
+                   purple2,
+                   grey2,
+                   black)
 
 }
 
