@@ -209,3 +209,102 @@ generate_ppt_report <- function(qmd_filename,
                         quiet          = TRUE)
 
 }
+
+#' Generate a PDF report using Quarto (Typst or LaTeX)
+#'
+#' Renders a Swiss TPH `.qmd` to PDF in the working directory using the Swiss
+#' TPH `report` Quarto extension. Two engines are available: Typst (default, no
+#' LaTeX toolchain required) and LaTeX (`engine = "latex"`, needs a LaTeX
+#' installation such as TinyTeX). The `.qmd` header must declare the `report-*`
+#' format matching the chosen engine (see "Required YAML header"); the function
+#' then copies the bundled `_extensions/report/` extension next to the `.qmd`
+#' and renders it. Any bibliography you reference in the `.qmd` header is your
+#' own responsibility -- the function does not manage `references.bib`.
+#'
+#' @section Required YAML header:
+#' For the default Typst engine the `.qmd` must use (see `report_simple_demo_typst.qmd`):
+#' \preformatted{
+#' format:
+#'   report-typst:
+#' }
+#' For the LaTeX engine the `.qmd` must use (see `report_simple_demo.qmd`):
+#' \preformatted{
+#' format:
+#'   report-pdf:
+#' }
+#'
+#' @param qmd_filename    Filename of the Quarto document to be processed (with *.qmd extension).
+#'                        Must already declare the `report-*` format matching `engine` (see above).
+#' @param pdf_filename    Filename for the generated PDF report (without *.pdf extension).
+#' @param engine          PDF engine: "typst" (default, no LaTeX needed) or "latex".
+#' @param filename_format Specify the filename format, options include an empty string (default) or "with_date".
+#' @param params          List of parameters to customize the report generation process (optional, default is an empty list).
+#'
+#' @return The function does not explicitly return a value but generates a PDF report in the working directory.
+#'
+#' @import quarto
+#' @export
+
+generate_pdf_report <- function(qmd_filename,
+                                pdf_filename,
+                                engine = "typst",
+                                filename_format = "",
+                                params = list()) {
+
+  # Get the current working directory
+  cdir <- getwd()
+
+  # Map the chosen engine to the Quarto output format provided by the extension
+  engine <- match.arg(engine, c("typst", "latex"))
+  out_format <- if (engine == "typst") "report-typst" else "report-pdf"
+
+  # Check if the Quarto document filename has the correct extension
+  if ( !endsWith(qmd_filename, ".qmd") ) {
+    stop(paste("`", qmd_filename, "` should be a *.qmd file. Please check and correct the parameter you passed as `qmd_filename`."), call. = FALSE)
+  }
+
+  # Create the full path to the Quarto document
+  qmd_file <- file.path(cdir,
+                        qmd_filename)
+
+  # Check if the Quarto document file exists
+  if ( !file.exists(qmd_file) ) {
+    stop(paste("Could not find `", qmd_file, "` in `", cdir, "`. Please check and correct the parameter you passed as `qmd_filename` or change the working directory."), call. = FALSE)
+  }
+
+  # The .qmd must declare the report format matching the chosen engine.
+  header <- readLines(qmd_file, warn = FALSE)
+  if ( !any(grepl(out_format, header, fixed = TRUE)) ) {
+    stop(paste0("`", qmd_filename, "` does not declare the `", out_format, "` format ",
+                "required for engine = \"", engine, "\". Use the matching template ",
+                "(`report_simple_demo_typst.qmd` for Typst, `report_simple_demo.qmd` for LaTeX) ",
+                "or change the `engine` argument."), call. = FALSE)
+  }
+
+  # Copy the bundled report extension next to the .qmd so Quarto can resolve
+  # the `report-typst` / `report-pdf` format (cover, template, fonts).
+  ext_src <- system.file("quarto", "_extensions", "report",
+                         package = "stphtoolbox")
+
+  if ( ext_src == "" ) {
+    stop("Could not find the `report` Quarto extension. Try re-installing `stphtoolbox`.", call. = FALSE)
+  }
+
+  dir.create(file.path(cdir, "_extensions"), showWarnings = FALSE)
+  file.copy(ext_src, file.path(cdir, "_extensions"), recursive = TRUE)
+
+  # Adjust the PDF filename based on the specified format
+  if (filename_format == "with_date") {
+    pdf_filename <- paste0(pdf_filename, '_',Sys.Date(),'.pdf')
+  } else{
+    pdf_filename <- paste0(pdf_filename, '.pdf')
+  }
+
+  # Render the Quarto document to generate the PDF report
+  quarto::quarto_render(input          = qmd_file,
+                        output_format  = out_format,
+                        output_file    = pdf_filename,
+                        execute_params = params,
+                        quiet          = TRUE)
+
+}
