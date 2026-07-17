@@ -17,15 +17,9 @@ author:
     orcid: https://orcid.org/
 format:
   report-pdf:
-    pdf-engine: xelatex
+    pdf-engine: lualatex
 date: last-modified
 mainfont: Aptos
-mainfontoptions: 
-  - Path = C:/Users/zhuzh/AppData/Local/Microsoft/Windows/Fonts/
-  - Extension = .ttf
-  - BoldFont = Aptos-Bold
-  - ItalicFont = Aptos-Italic
-  - BoldItalicFont = Aptos-Bold-Italic
 fontsize: 11pt
 lang: en
 execute: 
@@ -69,18 +63,11 @@ CHANGE ONLY IF YOU KNOW WHAT YOU ARE DOING — these can break rendering:
                 supplies the cover page, colours (swisstphindigo), and layout.
                 Do NOT rename, move, or delete _extensions/.
 
-  pdf-engine: xelatex
-                Required so the custom system font (below) works. Switching to
-                pdflatex breaks system-font support — leave as xelatex (or
-                lualatex).
+  pdf-engine: lualatex
+                Required so the custom system font (below) works.
 
-  mainfont: Aptos  +  mainfontoptions:
-                >>> MACHINE-SPECIFIC <<< The Path = C:/Users/zhuzh/AppData/...
-                points to ONE user's font folder. On another computer this
-                path will not exist and the render fails. To fix on your
-                machine: update Path to your own font directory, OR delete the
-                mainfont + mainfontoptions block to fall back to the default
-                font.
+  mainfont: Aptos
+                Swiss TPH brand identity font.
 
   execute: { echo: false, warning: false }
                 Hides R code and warnings. echo: true dumps R source into the
@@ -181,7 +168,7 @@ ggplot(mtcars, aes(x = mpg, fill = factor(cyl))) +
     position = "identity", 
     alpha = 0.6
   ) +
-  scale_fill_manual(values = c("#B5C752", "#EDCD64", "#468AB2"))  # Teal, blue, purple
+  scale_fill_manual(values = c("#432CA1", "#DDE24A", "#EA6674"))  # Swiss TPH indigo, yellow, red
 ```
 
 @fig-ggplot2 is an example of using R code to generate a figure in Quarto documents.

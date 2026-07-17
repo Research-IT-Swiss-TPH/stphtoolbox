@@ -170,7 +170,7 @@ ggplot(mtcars, aes(x = mpg, fill = factor(cyl))) +
     position = "identity", 
     alpha = 0.6
   ) +
-  scale_fill_manual(values = c("#B5C752", "#EDCD64", "#468AB2"))  # Teal, blue, purple
+  scale_fill_manual(values = c("#432CA1", "#DDE24A", "#EA6674"))  # Swiss TPH indigo, yellow, red
 ```
 
 @fig-ggplot2 is an example of using R code to generate a figure in Quarto documents.

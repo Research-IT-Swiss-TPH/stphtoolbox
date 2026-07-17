@@ -12,7 +12,8 @@ generate_word_report(
 )
 }
 \arguments{
-\item{qmd_filename}{Filename of the Quarto document to be processed (with *.qmd extension).}
+\item{qmd_filename}{Filename of the Quarto document to be processed (with *.qmd extension).
+Must already contain the required Swiss TPH header (see above).}
 
 \item{docx_filename}{Filename for the generated Quarto-rendered report (without *.docx extension).}
 
@@ -24,5 +25,21 @@ generate_word_report(
 The function does not explicitly return a value but generates a Word report in the working directory.
 }
 \description{
-This function generates a standardized Quarto document in DOCX format.
+Renders a Swiss TPH \code{.qmd} to DOCX in the working directory. The \code{.qmd} must
+carry the Swiss TPH styling in its own header (see "Required YAML header");
+the function then copies the bundled \verb{_extensions/word-report/} extension
+next to the \code{.qmd} and renders it.
 }
+\section{Required YAML header}{
+
+The input \code{.qmd} must contain these two lines (see \code{word_report_demo.qmd}
+for a full example), otherwise the function stops:
+\preformatted{
+filters:
+  - word-report
+format:
+  docx:
+    reference-doc: _extensions/word-report/report_template2.docx
+}
+}
+

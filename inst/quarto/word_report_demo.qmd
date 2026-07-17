@@ -26,11 +26,11 @@ execute:
   echo: false
   warning: false
 filters:
-  - word-report
+  - word-report                                              # MANDATORY: Swiss TPH filter (do not remove/rename)
 format:
   docx:
     number-sections: true
-    reference-doc: _extensions/word-report/report_template2.docx
+    reference-doc: _extensions/word-report/report_template2.docx  # MANDATORY: Swiss TPH template (keep path inside _extensions/)
 ---
 
 ```{=html}
@@ -38,6 +38,16 @@ format:
 ================================================================================
 GUIDE TO THE YAML HEADER ABOVE  (this block is a comment; it does NOT render)
 ================================================================================
+
+HOW TO RENDER (two equivalent ways):
+
+  Manual : put this .qmd and the _extensions/word-report/ folder in the same
+           directory, then run `quarto render word_report_demo.qmd` (or click
+           Render in RStudio).
+  Helper : stphtoolbox::generate_word_report("word_report_demo.qmd", "my_report")
+           does exactly the same — it copies _extensions/word-report/ next to
+           the .qmd for you and renders. The helper REQUIRES the two MANDATORY
+           lines below; it refuses to render a .qmd without them.
 
 SAFE TO CUSTOMISE — change these freely:
 

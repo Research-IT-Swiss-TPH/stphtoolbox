@@ -2,7 +2,7 @@
 
 $body-bg: #fff;
 $body-color: #000;
-$link-color: #468ab2;
+$link-color: #432ca1;
 
 // headings
 $presentation-h2-font-size: 24px !default;
@@ -15,27 +15,42 @@ $presentation-h3-font-size: 18px !default;
   padding-left: 0.5em;
 }
 
+// logo: smaller + crisp downscale of the 4961px source (default size
+// renders soft over the busy title/section backgrounds)
+.reveal .slide-logo {
+  max-height: 40px !important;
+  width: auto !important;
+  image-rendering: -webkit-optimize-contrast;
+}
+
 .reveal h1 {
-  text-align: right;
+  text-align: left;
   color: #ffffff;
+}
+
+// .section-light divider (e.g. Section 2) sits on a light background
+// -> indigo1 title for contrast (embed-resources inlines images as data
+// URIs, so target by class, not filename)
+.reveal section.section-light h1 {
+  color: #432ca1;
 }
 
 .reveal h2 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;          /* ensures 24 even if var not picked up */
-  color: #468ab2;
+  color: #432ca1;
   margin-bottom: 1.2em;
 }
 
 .reveal h3 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;          /* ensures 18 even if var not picked up */
-  color: #bf3227;
+  color: #ea6674;
 }
 
 .reveal ul li::marker,
 .reveal ol li::marker {
-  color: #bf3227; /* bullet or number color */
+  color: #ea6674; /* bullet or number color */
 }
 
 .table-striped {
@@ -45,7 +60,7 @@ $presentation-h3-font-size: 18px !default;
 }
 
 .reveal strong {
-  color: #b5c751; /* your highlight color */
+  color: #dde24a; /* your highlight color */
   font-weight: bold;
 }
 
@@ -61,4 +76,9 @@ $presentation-h3-font-size: 18px !default;
 
 .reveal:has(section.present[data-background-image]) .footer {
   color: #fff !important;
+}
+
+// light .section-light background -> dark footer for contrast
+.reveal:has(section.present.section-light) .footer {
+  color: #432ca1 !important;
 }

@@ -10,6 +10,14 @@ author:
       - name: Swiss TPH
     orcid: 0000-0000-0000-0000
     email: fname.lname@swisstph.ch
+  - name:
+      given: Jane
+      family: Doe
+    degrees: MSc
+    affiliations:
+      - name: Swiss TPH
+    orcid: 0000-0000-0000-0000
+    email: jane.doe@swisstph.ch
 date: last-modified
 editor: source
 execute: 
@@ -25,16 +33,17 @@ format:
     template-partials:
       - title-slide.html
     title-slide-attributes:
-      data-background-image: images/stph_title_bkg.png
-      data-background-size: cover
+      data-background-image: images/stph_title_bkg.svg
+      data-background-size: contain
       data-background-position: center
+      data-background-color: "#432ca1"
       data-background-opacity: "1"
     slide-number: true
     embed-resources: true
     theme: custom.scss
 ---
 
-# Section 1 {data-background-image="images/stph_title_bkg_section1.png" data-background-size="cover" data-background-position="center"}
+# Section 1 {data-background-image="images/stph_title_bkg_section1.svg" data-background-size="contain" data-background-position="center" data-background-color="#432ca1"}
 
 ## My first slide
 
@@ -54,7 +63,7 @@ Text
 
 :::
 
-# Section 2 {data-background-image="images/stph_title_bkg_section2.png" data-background-size="cover" data-background-position="center"}
+# Section 2 {.section-light data-background-image="images/stph_title_bkg_section2.svg" data-background-size="contain" data-background-position="center" data-background-color="#ffffff"}
 
 ## Slide 2
 

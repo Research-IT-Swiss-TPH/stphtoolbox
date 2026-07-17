@@ -12,7 +12,8 @@ generate_ppt_report(
 )
 }
 \arguments{
-\item{qmd_filename}{Filename of the Quarto document to be processed (with *.qmd extension).}
+\item{qmd_filename}{Filename of the Quarto document to be processed (with *.qmd extension).
+Must already contain the required Swiss TPH header (see above).}
 
 \item{pptx_filename}{Filename for the generated Quarto-rendered presentation (without *.pptx extension).}
 
@@ -24,5 +25,19 @@ generate_ppt_report(
 The function does not explicitly return a value but generates a Powerpoint presentation in the working directory.
 }
 \description{
-This function generates a standardized Quarto document in PPTX format.
+Renders a Swiss TPH \code{.qmd} to PPTX in the working directory. The \code{.qmd} must
+carry the Swiss TPH metadata in its own header (see "Required YAML header");
+the function then copies the companion files \verb{_ppt_metadata.yml} and
+\code{ppt_template2.pptx} next to the \code{.qmd} and renders it.
 }
+\section{Required YAML header}{
+
+The input \code{.qmd} must contain these lines (see \code{ppt_report_demo.qmd} for a
+full example), otherwise the function stops:
+\preformatted{
+format: pptx
+metadata-files:
+  - _ppt_metadata.yml
+}
+}
+
