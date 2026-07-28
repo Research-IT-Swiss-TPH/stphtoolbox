@@ -187,7 +187,7 @@ For more advanced use of Quarto citations, see [Citations - Quarto](https://quar
 
 ## Swiss TPH self-paced Quarto tutorial
 
-See [Swiss TPH Quarto training](https://research-it-swiss-tph.github.io/quarto_training/) for the Quarto tutorial website developed by Research-IT.
+See [Swiss TPH Quarto training](https://research-it-swiss-tph.github.io/quarto_training/) for the Quarto tutorial website developed by Research Informatics.
 
 ## Callout blocks in Quarto
 
